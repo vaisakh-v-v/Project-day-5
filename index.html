@@ -1,0 +1,30 @@
+<!-- Create a new GitHub repository for the project. Clone it locally.
+114. Scaffold the folder structure: index.html, about.html, services.html, team.html, contact.html, plus
+/images and /media placeholder folders
+115. Write the shared navigation HTML snippet once (you will copy-paste it into each page and mark
+the active page with aria-current='page')
+116. Add a shared footer snippet. Commit with message: 'chore: scaffold five-page project'-->
+<!DOCTYPE html>
+<html>
+    <head lang="en-US">
+     <title>Home Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width intial-scaling=1.0">
+    </head>
+    <body>
+        <header>
+        <nav class="site-navigation" aria-label="main navigation">
+            <ul class="nav-list">
+                <li><a href="/index.html" aria-current="page">Home-page</a></li>
+                <li><a href="/about.html" >About</a></li>
+                  <li><a href="/services.html">Service</a></li>
+                    <li><a href="/contact.html" >Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <footer>
+        <p>This is the Index Page</p>
+    </footer>
+    </body>
+
+</html>
