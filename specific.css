@@ -1,0 +1,54 @@
+
+/*1,0,0,0,1*/
+h1{
+    color: black !important;
+}
+/* 1,0,1,0,0*/
+#id1{
+    color: rgb(143, 23, 15) !important;
+}
+/* 1,0,0,1,0*/
+.bg-red{
+
+    color: darkolivegreen !important;
+}
+/*1,0,0,1,0*/
+.bg-gray{
+    color: darkblue !important;
+}
+/*1,0,0,0,2*/
+main h1{
+    color: bisque !important;
+}
+/* 1,0,0,1,2 */
+main h1 :first-child{
+    color: darkslategray !important;
+}
+
+/*1,0,0*/
+#id1{
+    color: rgb(143, 23, 15) ;
+}
+
+/*0,0,2*/
+main > h1{
+    
+    color: bisque !important;
+}
+/*0,0,1*/
+h1{
+    color: black;
+}
+/*0,1,0*/
+.bg-red{
+
+    color: darkolivegreen ;
+}
+/*0,1,0*/
+.bg-gray{
+    color: darkblue ;
+}
+/*0,0,2*/
+main h1{
+    color: bisque;
+}
