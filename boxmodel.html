@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang = "en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width initial-scaling=2.0"> 
+        <title>Box model</title>
+    </head>
+    <body>
+        <div style="border: 1px; margin: 2px; padding: 12px; background-color: crimson; color: black;">Media</div>
+        <div style="border: 2px; margin: 5px; padding: 14px; background-color: rgb(20, 220, 53); color: black;">Media</div>
+        <div style="border: 3px; margin: 10px; padding: 16px; background-color: rgb(130, 20, 220); color: black;">Media</div>
+        <div style="border: 4px; margin: 15px; padding: 18px; background-color: rgb(20, 220, 20); color: black;">Media</div>
+        <div style="border: 5px; margin: 20px; padding: 20px; background-color: rgb(172, 132, 140); color: black;">Media</div>
+        <div style="border: 6px; margin: 25px; padding: 23px; background-color: rgb(220, 20, 153); color: black;">Media</div>
+        
+
+
+
+        <h1>Content box vs border box</h1>
+        <h2>Content Box</h2>
+
+        <div style="width: 300px; border: 5px solid black; box-sizing: content-box;">
+            <div style="border: 3px;  padding: 16px; background-color: rgb(130, 20, 220); color: black;">This is the content box where all the contents are written this is some random content that is being added to improve the view in the inspect page</div>
+        </div>
+
+
+        <h2>Border box</h2>
+        <div style="width: 300px; border: 5px solid black; box-sizing: border-box;">
+            <div style="border: 3px;  padding: 16px; background-color: rgb(130, 20, 220); color: black;">This is the content box where all the contents are written this is some random content that is being added to improve the view in the inspect page</div>
+        </div>
+
+
+
+
+       
+    
+
+       
+    </body>
+</html>
