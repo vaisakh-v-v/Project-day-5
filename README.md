@@ -10,4 +10,7 @@ Completed building a basic html project with:
 
 References
 
-- 
+- [MDN Docs] - https://developer.mozilla.org/en-US/docs/Web/HTML
+- [Stack overflow] - https://stackoverflow.com/questions
+- [picsum photos] - https://picsum.photos
+
