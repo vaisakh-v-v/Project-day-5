@@ -1,0 +1,46 @@
+<!--Create specificity.html. Add fifteen conflicting CSS rules targeting the same element using
+different selector types (element, class, ID, inline, !important)
+141. Before adding the stylesheet to the HTML, write your prediction of the winning rule for each
+group. Note your prediction in a comment above each rule.
+142. Link the stylesheet and run in browser. For every case where you were wrong, write a
+one-sentence explanation of why
+143. Write the specificity score in (0,0,0,0) format as a comment above each -->
+
+
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <!--inline css will win (1 0 0 0)-->>
+   
+        <meta charset = "utf-8"> 
+        <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+        <title> gallary </title>
+        <link rel="stylesheet" href="specific.css">
+        <style>
+            #id1{
+                background-color: darkslategrey;
+            }
+            #id{
+                background-color: ivory;
+            }
+        </style>
+    </head>
+
+<body>
+  <main>
+    <h1 class="bg-red bg-gray" id="id1" style="background-color:light pink ;">This is para 1</h1>
+  </main>
+</body>
+
+<!--Oredr of presidence is as follow
+1. inline
+2. Internal
+3.External
+within External:
+    1.Id
+    2.Pseudo-class
+    3.last given class
+    4.class
+    5.element-->
+
+</html>
