@@ -1,248 +1,240 @@
-<!DOCTYPE html>
-<html lang = "en-US">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width initial-scaling=2.0"> 
-        <title>Spoarts Table</title>
-        <style>
-            .bg-image{
-                background-image: url(https://picsum.photos/seed/picsum/200/300);
-                background-size: contain;
-                background-position: 30%;
-                background-repeat: repeat;
-                background-attachment: fixed;
-            }
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width initial-scaling=2.0" />
+    <title>Spoarts Table</title>
+    <style>
+      .bg-image {
+        background-image: url(https://picsum.photos/seed/picsum/200/300);
+        background-size: contain;
+        background-position: 30%;
+        background-repeat: repeat;
+        background-attachment: fixed;
+      }
 
-            .bg-gradient-1{
-               background: linear-gradient(
-                #e65645,
-                #354345,
-                #3543e5,
-                transparent
-               ); 
-            }
-            .bg-gradient-2{
-               background: linear-gradient(
-                to left,
-                #e65645,
-                #354345,
-                #3543e5,
-                
-               ); 
-            }
-            .bg-radial-1{
-               background: radial-gradient(
-                to left,
-                #e65645 20%,
-                #354345 50%,
-                #3543e5 80%,
-                
-               ); 
-            }
-            .bg-radial-2{
-               background: radial-gradient(
-                circle at center,
-                #e65645 20%,
-                #354345 50%,
-                #3543e5 90%,
-               ); 
-            }
+      .bg-gradient-1 {
+        background: linear-gradient(#e65645, #354345, #3543e5, transparent);
+      }
+      .bg-gradient-2 {
+        background: linear-gradient(to left, #e65645, #354345, #3543e5);
+      }
+      .bg-radial-1 {
+        background: radial-gradient(
+          to left,
+          #e65645 20%,
+          #354345 50%,
+          #3543e5 80%
+        );
+      }
+      .bg-radial-2 {
+        background: radial-gradient(
+          circle at center,
+          #e65645 20%,
+          #354345 50%,
+          #3543e5 90%
+        );
+      }
 
-            .width-100 {
-                width: 100vw;
-            }
+      .width-100 {
+        width: 100vw;
+      }
 
-            .height-100 {
-                height: 100vh;
-            }
+      .height-100 {
+        height: 100vh;
+      }
 
-            .width-50 {
-                width: 50vw;
-            }
+      .width-50 {
+        width: 50vw;
+      }
 
-            .height-50 {
-                height: 50vh;
-            }
-            .inline {
-                display: inline;
-            }
-            .flex{
-                display: flex;
-            }
-            .text-white {
-                color: white;
-            }
-            .center {
-                justify-content: center;
-                align-items:center;
-            }
+      .height-50 {
+        height: 50vh;
+      }
+      .inline {
+        display: inline;
+      }
+      .flex {
+        display: flex;
+      }
+      .text-white {
+        color: white;
+      }
+      .center {
+        justify-content: center;
+        align-items: center;
+      }
 
-            .m-20{
-                margin: 20px;
-            }
-            .border-box{
-                box-sizing: border-box;
-            }
+      .m-20 {
+        margin: 20px;
+      }
+      .border-box {
+        box-sizing: border-box;
+      }
 
-            .boeder-solid{
-                border: black solid 10px;
-            }
+      .boeder-solid {
+        border: black solid 10px;
+      }
 
-            .border-doted{
-                border: black dotted 5px;
-            }
-            .border-dashed{
-                border : black dotted 8px;
-            }
-            .border-double{
-                border: black double 12px;
-            }
-            .border-rounded{
-                border-radius: 50%;
-            }
-            .width-300px{
-                width: 300px
-            }
-            .height-300px{
-                height: 300px;
-            }
-            .border-rounded-10000px{
-                border-radius: 10000px;
-            }
-        </style>
-    </head>
+      .border-doted {
+        border: black dotted 5px;
+      }
+      .border-dashed {
+        border: black dotted 8px;
+      }
+      .border-double {
+        border: black double 12px;
+      }
+      .border-rounded {
+        border-radius: 50%;
+      }
+      .width-300px {
+        width: 300px;
+      }
+      .height-300px {
+        height: 300px;
+      }
+      .border-rounded-10000px {
+        border-radius: 10000px;
+      }
+    </style>
+  </head>
 
-    <body>
-        <main>
-            <section class="bg-image width-100 height-100"></section>
-            <section class="width-100 height-50 flex">
-            
-            <div class="width-50 height-50 bg-gradient-1 text-white flex center">
-                linear-gradient(#e34476 30%, #e62325 40%, #2345ff 90% transparent)
-            </div>
+  <body>
+    <main>
+      <section class="bg-image width-100 height-100"></section>
+      <section class="width-100 height-50 flex">
+        <div class="width-50 height-50 bg-gradient-1 text-white flex center">
+          linear-gradient(#e34476 30%, #e62325 40%, #2345ff 90% transparent)
+        </div>
 
-            <div class="widt-50 height-50 bg-gradient-2 text-white flex center">
-                linear-gradient(to left, #e65645 30%, #354345 40%, #3543e5 90%) 
-            </div>
-            </section>
+        <div class="widt-50 height-50 bg-gradient-2 text-white flex center">
+          linear-gradient(to left, #e65645 30%, #354345 40%, #3543e5 90%)
+        </div>
+      </section>
 
-            <section class="width-100 height-50 flex">
-            
-            <div class="width-50 height-50 bg-radial-1 text-white flex center">
-                radial-gradient(to left, #e65645 20%, #354345 50%, #3543e5 80%,
-                
-               )
-            </div>
+      <section class="width-100 height-50 flex">
+        <div class="width-50 height-50 bg-radial-1 text-white flex center">
+          radial-gradient(to left, #e65645 20%, #354345 50%, #3543e5 80%, )
+        </div>
 
-            <div class="widt-50 height-50 bg-radial-2 text-white flex center">
-                radial-gradient(circle at center, #e65645 20%,#354345 50%,#3543e5 90%)
-            </div>
-            </section>
+        <div class="widt-50 height-50 bg-radial-2 text-white flex center">
+          radial-gradient(circle at center, #e65645 20%,#354345 50%,#3543e5 90%)
+        </div>
+      </section>
 
-            <section class="width-100 height-50 flex m-20">
-            
-            <div class="width-50 height-50 border-box border-solid  flex center">
-                border-solid
-            </div>
+      <section class="width-100 height-50 flex m-20">
+        <div class="width-50 height-50 border-box border-solid flex center">
+          border-solid
+        </div>
 
-            <div class="width-50 height-50 border-box border-doted  flex center">
-                border-doted
-            </div>
-            </section>
+        <div class="width-50 height-50 border-box border-doted flex center">
+          border-doted
+        </div>
+      </section>
 
-            <section class="width-100 height-50 flex m-20">
-            
-            <div class="width-50 height-50 border-box border-solid  flex center">
-                border-solid
-            </div>
+      <section class="width-100 height-50 flex m-20">
+        <div class="width-50 height-50 border-box border-solid flex center">
+          border-solid
+        </div>
 
-            <div class="width-50 height-50 border-box border-doted  flex center">
-                border-doted
-            </div>
-            </section>
+        <div class="width-50 height-50 border-box border-doted flex center">
+          border-doted
+        </div>
+      </section>
 
-            <section class="width-100 height-50 flex m-20">
-            
-            <div class="width-50 height-50 border-solid border-rounded  flex center">
-                border-rounded-circle
-            </div>
+      <section class="width-100 height-50 flex m-20">
+        <div class="width-50 height-50 border-solid border-rounded flex center">
+          border-rounded-circle
+        </div>
 
-            <div class="width-50 height-50 border-solid border-rounded-10000px  flex center">
-                border-rounded-pill-10000px
-            </div>
+        <div
+          class="width-50 height-50 border-solid border-rounded-10000px flex center"
+        >
+          border-rounded-pill-10000px
+        </div>
 
-            <div class="width-300px height-300px border-solid flex center" style="border-radius: 34% 40% 50% 60%;">
-                border-radius: 34% 40% 50% 60%
-            </div>
-            </section>
+        <div
+          class="width-300px height-300px border-solid flex center"
+          style="border-radius: 34% 40% 50% 60%"
+        >
+          border-radius: 34% 40% 50% 60%
+        </div>
+      </section>
 
+      <section class="width-100 height-50 flex m-20">
+        <div
+          class="width-50 height-50 border-box border-dashed text-white flex center"
+        >
+          border-dashed
+        </div>
 
+        <div
+          class="width-50 height-50 border-box border-double text-white flex center"
+        >
+          border-double
+        </div>
+      </section>
 
+      <section class="width-100 height-50 flex m-20">
+        <div class="width-50 height-50 border-box border-solid flex center">
+          <div
+            style="
+              width: 30vw;
+              height: 30vh;
+              border: solid black;
+              box-shadow: 10px 5px 5px blue;
+            "
+            class="flex center"
+          >
+            soft shadow
+          </div>
+        </div>
 
-            <section class="width-100 height-50 flex m-20">
-            
-            <div class="width-50 height-50 border-box border-dashed text-white flex center">
-                border-dashed
-            </div>
+        <div class="width-50 height-50 border-box border-solid flex center">
+          <div
+            style="
+              width: 30vw;
+              height: 30vh;
+              border: solid black 5px;
+              box-shadow: green 50px -30px;
+            "
+            class="flex center"
+          >
+            hard offset shadow
+          </div>
+        </div>
+      </section>
 
-            <div class="width-50 height-50 border-box border-double text-white flex center">
-                border-double
-            </div>
-            </section>
+      <section class="width-100 height-50 flex m-20">
+        <div class="width-50 height-50 border-box border-solid flex center">
+          <div
+            style="
+              width: 30vw;
+              height: 30vh;
+              border: solid black;
+              box-shadow: inset 5em 1em red;
+            "
+            class="flex center"
+          >
+            inset shadow
+          </div>
+        </div>
 
-            <section class="width-100 height-50 flex m-20">
-            
-            <div class="width-50 height-50 border-box border-solid flex center">
-                <div
-                style="width: 30vw;
-                height: 30vh;
-                border:solid black;
-                box-shadow: 10px 5px 5px blue;"
-                class="flex center"
-                >
-                soft shadow
-            </div>
-            </div>
-
-            <div class="width-50 height-50 border-box border-solid flex center">
-                <div
-                style="width: 30vw;
-                height: 30vh;
-                border:solid black 5px;
-                box-shadow: green 50px -30px;"
-                class="flex center"
-                >
-                hard offset shadow
-            </div>
-            </div>
-            </section>
-
-            <section class="width-100 height-50 flex m-20">
-            
-            <div class="width-50 height-50 border-box border-solid flex center">
-                <div
-                style="width: 30vw;
-                height: 30vh;
-                border:solid black;
-                box-shadow: inset 5em 1em red;"
-                class="flex center"
-                >
-                inset shadow
-            </div>
-            </div>
-
-            <div class="width-50 height-50 border-box border-solid flex center">
-                <div
-                style="width: 30vw;
-                height: 30vh;
-                border:solid black 5px;
-                box-shadow: 10px 10px red,
-                20px 20px blue
-                30px 30px green"
-                class="flex center"
-                ></div>
-            </div>
-            </section>
-        </main>
-    </body>
+        <div class="width-50 height-50 border-box border-solid flex center">
+          <div
+            style="
+              width: 30vw;
+              height: 30vh;
+              border: solid black 5px;
+              box-shadow:
+                10px 10px red,
+                20px 20px blue 30px 30px green;
+            "
+            class="flex center"
+          ></div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
