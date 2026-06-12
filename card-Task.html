@@ -1,0 +1,301 @@
+<!--Build a card component: image on top, content area (title h3, description, tags, footer with price
+and button) - the footer must always align to the bottom regardless of content length using
+flex-direction: column and margin-top: auto on the footer
+182. Build a horizontal card variant: image on the left (fixed 160px wide), content on the right -
+switch layout using a media query at 600px
+183. Build a six-card grid using a flex container with flex-wrap: wrap and flex: 1 1 calc(33.333% -
+2rem) - three columns on desktop, two on tablet (700px), one on mobile (480px)-->
+
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Card-Task</title>
+    <meta charset="UTF-8" />
+    <meta name="view-port" content="width=device-width initial-scaling=1.0" />
+
+    <style>
+      .main {
+        display: flex;
+        align-items: center;
+
+        flex-direction: column;
+        height: 100vh;
+      }
+      .card {
+        border: 2px solid black;
+        width: 420px;
+      }
+      .card-thumbnail img {
+        height: 30vh;
+        width: 30vw;
+        margin-left: 0;
+      }
+      .card-footer {
+        display: flex;
+        height: 71px;
+        width: 387px;
+      }
+      .container {
+        display: flex;
+      }
+      .container{
+        width: 90vw;
+        height: auto;
+        margin-left:0 ;
+        margin-right:0 ;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 2em;
+        justify-content: space-around;
+      }
+      .card-container{
+        flex-basis: 30%;
+        margin-bottom: 1.2em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="card">
+        <div class="card-thumbnail">
+          <img
+            src="https://miro.medium.com/v2/1*EGgUvJzlC-Q2tdqkWcSpIw.jpeg"
+            alt="miyamoto Musashi"
+          />
+        </div>
+        <div class="card-body">
+          <h3>Samurai</h3>
+          <p>
+            Samurai were the elite, professional warrior class and hereditary
+            nobility of medieval and early-modern Japan. Emerging in the 8th
+            century, they served as loyal retainers to regional feudal lords
+            (daimyo), eventually rising to political dominance until the
+            abolition of their class in the 1868 Meiji Restoration.
+          </p>
+        </div>
+        <div class="card-footer">
+          <p><strong>Purchase now</strong></p>
+          <button
+            type="button"
+            style="
+              background-color: green;
+              border-radius: 20%;
+              height: 35px;
+              margin-left: 70%;
+            "
+          >
+            $5999
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="card-container">
+        <div class="card">
+          <div class="card-thumbnail">
+            <img
+              src="https://miro.medium.com/v2/1*EGgUvJzlC-Q2tdqkWcSpIw.jpeg"
+              alt="miyamoto Musashi"
+            />
+          </div>
+          <div class="card-body">
+            <h3>Samurai</h3>
+            <p>
+              Samurai were the elite, professional warrior class and hereditary
+              nobility of medieval and early-modern Japan. Emerging in the 8th
+              century, they served as loyal retainers to regional feudal lords
+              (daimyo), eventually rising to political dominance until the
+              abolition of their class in the 1868 Meiji Restoration.
+            </p>
+          </div>
+          <div class="card-footer">
+            <p><strong>Purchase now</strong></p>
+            <button
+              type="button"
+              style="
+                background-color: green;
+                border-radius: 20%;
+                height: 35px;
+                margin-left: 70%;
+              "
+            >
+              $5999
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="card-container">
+        <div class="card">
+          <div class="card-thumbnail">
+            <img
+              src="https://miro.medium.com/v2/1*EGgUvJzlC-Q2tdqkWcSpIw.jpeg"
+              alt="miyamoto Musashi"
+            />
+          </div>
+          <div class="card-body">
+            <h3>Samurai</h3>
+            <p>
+              Samurai were the elite, professional warrior class and hereditary
+              nobility of medieval and early-modern Japan. Emerging in the 8th
+              century, they served as loyal retainers to regional feudal lords
+              (daimyo), eventually rising to political dominance until the
+              abolition of their class in the 1868 Meiji Restoration.
+            </p>
+          </div>
+          <div class="card-footer">
+            <p><strong>Purchase now</strong></p>
+            <button
+              type="button"
+              style="
+                background-color: green;
+                border-radius: 20%;
+                height: 35px;
+                margin-left: 70%;
+              "
+            >
+              $5999
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="card-container">
+        <div class="card">
+          <div class="card-thumbnail">
+            <img
+              src="https://miro.medium.com/v2/1*EGgUvJzlC-Q2tdqkWcSpIw.jpeg"
+              alt="miyamoto Musashi"
+            />
+          </div>
+          <div class="card-body">
+            <h3>Samurai</h3>
+            <p>
+              Samurai were the elite, professional warrior class and hereditary
+              nobility of medieval and early-modern Japan. Emerging in the 8th
+              century, they served as loyal retainers to regional feudal lords
+              (daimyo), eventually rising to political dominance until the
+              abolition of their class in the 1868 Meiji Restoration.
+            </p>
+          </div>
+          <div class="card-footer">
+            <p><strong>Purchase now</strong></p>
+            <button
+              type="button"
+              style="
+                background-color: green;
+                border-radius: 20%;
+                height: 35px;
+                margin-left: 70%;
+              "
+            >
+              $5999
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="card-container">
+        <div class="card">
+          <div class="card-thumbnail">
+            <img
+              src="https://miro.medium.com/v2/1*EGgUvJzlC-Q2tdqkWcSpIw.jpeg"
+              alt="miyamoto Musashi"
+            />
+          </div>
+          <div class="card-body">
+            <h3>Samurai</h3>
+            <p>
+              Samurai were the elite, professional warrior class and hereditary
+              nobility of medieval and early-modern Japan. Emerging in the 8th
+              century, they served as loyal retainers to regional feudal lords
+              (daimyo), eventually rising to political dominance until the
+              abolition of their class in the 1868 Meiji Restoration.
+            </p>
+          </div>
+          <div class="card-footer">
+            <p><strong>Purchase now</strong></p>
+            <button
+              type="button"
+              style="
+                background-color: green;
+                border-radius: 20%;
+                height: 35px;
+                margin-left: 70%;
+              "
+            >
+              $5999
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="card-container">
+        <div class="card">
+          <div class="card-thumbnail">
+            <img
+              src="https://miro.medium.com/v2/1*EGgUvJzlC-Q2tdqkWcSpIw.jpeg"
+              alt="miyamoto Musashi"
+            />
+          </div>
+          <div class="card-body">
+            <h3>Samurai</h3>
+            <p>
+              Samurai were the elite, professional warrior class and hereditary
+              nobility of medieval and early-modern Japan. Emerging in the 8th
+              century, they served as loyal retainers to regional feudal lords
+              (daimyo), eventually rising to political dominance until the
+              abolition of their class in the 1868 Meiji Restoration.
+            </p>
+          </div>
+          <div class="card-footer">
+            <p><strong>Purchase now</strong></p>
+            <button
+              type="button"
+              style="
+                background-color: green;
+                border-radius: 20%;
+                height: 35px;
+                margin-left: 70%;
+              "
+            >
+              $5999
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="card-container">
+        <div class="card">
+          <div class="card-thumbnail">
+            <img
+              src="https://miro.medium.com/v2/1*EGgUvJzlC-Q2tdqkWcSpIw.jpeg"
+              alt="miyamoto Musashi"
+            />
+          </div>
+          <div class="card-body">
+            <h3>Samurai</h3>
+            <p>
+              Samurai were the elite, professional warrior class and hereditary
+              nobility of medieval and early-modern Japan. Emerging in the 8th
+              century, they served as loyal retainers to regional feudal lords
+              (daimyo), eventually rising to political dominance until the
+              abolition of their class in the 1868 Meiji Restoration.
+            </p>
+          </div>
+          <div class="card-footer">
+            <p><strong>Purchase now</strong></p>
+            <button
+              type="button"
+              style="
+                background-color: green;
+                border-radius: 20%;
+                height: 35px;
+                margin-left: 70%;
+              "
+            >
+              $5999
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
