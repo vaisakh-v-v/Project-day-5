@@ -1,0 +1,161 @@
+<!--Build the classic Holy Grail: full-width header, three-column middle (fixed-width left sidebar,
+flexible main content, fixed-width right aside), full-width footer - using only Flexbox, no Grid
+185. Main content must grow to fill all remaining space. Sidebars must have fixed width.
+186. Below 600px: stack all three columns with main content first (use order property)
+187. Add min-height: 100vh on the outer wrapper so the footer is always pushed to the bottom-->
+
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width initial-scaling = 1.0" />
+    <title>Holy Grail</title>
+    <style>
+      .site-wrapper {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      .site-header,
+      .site-footer {
+        flex-shrink: 0;
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+      }
+
+      .main-wrapper {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+      }
+      .sidebar-left {
+        flex: 0 0 200px;
+        background-color: #f4f4f4;
+        padding: 20px;
+      }
+
+      .main-content {
+        flex: 1;
+        background-color: #fff;
+        padding: 20px;
+      }
+      .sidebar-right {
+        flex: 0 0 150px;
+        background-color: #eaeaea;
+        padding: 20px;
+      }
+
+      @media (max-width: 600px) {
+        .main-wrapper {
+          flex-direction: column;
+          flex-wrap: nowrap;
+        }
+        .main-content {
+          order: 1;
+        }
+        .sidebar-left {
+          order: 2;
+        }
+
+        .sidebar-right {
+          order: 3;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="site-wraper">
+      <header class="site-header">
+        <h1>Where does it come from?</h1>
+      </header>
+
+      <div class="main-wrapper">
+        <nav class="sidebar-left">
+          <p>Left side-bar</p>
+        </nav>
+
+        <main class="main-content">
+          <h2>Lorem Ipsum</h2>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since 1966, when designers at Letraset and James Mosley, the
+            librarian at St Bride Printing Library in London, took a 1914 Cicero
+            translation and scrambled it to make dummy text for Letraset's Body
+            Type sheets. It has survived not only many decades, but also the
+            leap into electronic typesetting, remaining essentially unchanged.
+            It was popularised thanks to these sheets and more recently with
+            desktop publishing software including versions of Lorem Ipsum.
+          </p>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since 1966, when designers at Letraset and James Mosley, the
+            librarian at St Bride Printing Library in London, took a 1914 Cicero
+            translation and scrambled it to make dummy text for Letraset's Body
+            Type sheets. It has survived not only many decades, but also the
+            leap into electronic typesetting, remaining essentially unchanged.
+            It was popularised thanks to these sheets and more recently with
+            desktop publishing software including versions of Lorem Ipsum.
+          </p>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since 1966, when designers at Letraset and James Mosley, the
+            librarian at St Bride Printing Library in London, took a 1914 Cicero
+            translation and scrambled it to make dummy text for Letraset's Body
+            Type sheets. It has survived not only many decades, but also the
+            leap into electronic typesetting, remaining essentially unchanged.
+            It was popularised thanks to these sheets and more recently with
+            desktop publishing software including versions of Lorem Ipsum.
+          </p>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since 1966, when designers at Letraset and James Mosley, the
+            librarian at St Bride Printing Library in London, took a 1914 Cicero
+            translation and scrambled it to make dummy text for Letraset's Body
+            Type sheets. It has survived not only many decades, but also the
+            leap into electronic typesetting, remaining essentially unchanged.
+            It was popularised thanks to these sheets and more recently with
+            desktop publishing software including versions of Lorem Ipsum.
+          </p>
+
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since 1966, when designers at Letraset and James Mosley, the
+            librarian at St Bride Printing Library in London, took a 1914 Cicero
+            translation and scrambled it to make dummy text for Letraset's Body
+            Type sheets. It has survived not only many decades, but also the
+            leap into electronic typesetting, remaining essentially unchanged.
+            It was popularised thanks to these sheets and more recently with
+            desktop publishing software including versions of Lorem Ipsum.
+          </p>
+
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since 1966, when designers at Letraset and James Mosley, the
+            librarian at St Bride Printing Library in London, took a 1914 Cicero
+            translation and scrambled it to make dummy text for Letraset's Body
+            Type sheets. It has survived not only many decades, but also the
+            leap into electronic typesetting, remaining essentially unchanged.
+            It was popularised thanks to these sheets and more recently with
+            desktop publishing software including versions of Lorem Ipsum.
+          </p>
+        </main>
+
+        <aside class="sidebar-right">
+          <p>Right aside fixed</p>
+        </aside>
+      </div>
+
+      <footer class="site-footer">
+        <p>Footer</p>
+      </footer>
+    </div>
+  </body>
+</html>
