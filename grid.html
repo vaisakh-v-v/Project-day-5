@@ -1,0 +1,149 @@
+<!--Create grid.html with seven grid containers, each demonstrating a different column sizing
+method: fixed px, percentage %, fr units, 30px, minmax(200px, 1fr), repeat(3, 1fr), and
+repeat(30px-fill, minmax(200px, 1fr))
+203. Show the fr unit with different ratios (1fr 2fr 1fr) and verify the proportions in DevTools
+204. Demonstrate the implicit grid: add more children than your explicit tracks. Use grid-30px-rows:
+minmax(100px, 30px) to size overflow rows.
+205. Show column-gap, row-gap, and the gap shorthand
+-->
+
+<!DOCTYPE html>
+<html lang="en-US">
+    <head >
+     <title>About Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width intial-scaling=1.0">
+        <meta name="description" content="This is a home page">
+        <style>
+            .container-1{
+                display: grid;
+                grid-template-columns: 200px 203px 204px;
+                row-gap: 20px;    
+                column-gap: 10px;
+                margin: 30px;
+            }
+
+            .container-2{
+                display: grid;
+                grid-template-columns: 20% 20% 20%;
+                row-gap: 20px;    
+                column-gap: 10px;
+                margin: 30px;
+            }
+            .container-3{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                row-gap: 20px;    
+                column-gap: 10px;
+                margin: 30px;
+            }
+            .container-4{
+                display: grid;
+                grid-template-columns: 30px;
+                row-gap: 20px;    
+                column-gap: 10px;
+                margin: 30px;
+            }
+            .container-5{
+                display: grid;
+                grid-template-columns: minmax(200px , 1fr);
+                row-gap: 20px;    
+                column-gap: 10px;
+                margin: 30px;
+                
+            }
+            .container-6{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                row-gap: 20px;    
+                column-gap: 10px;
+                margin: 30px;
+                
+            }
+            .container-7{
+                display: grid;
+                grid-template-columns: 30px-fill, minmax(200px, 1fr);
+                row-gap: 20px; 
+                column-gap: 10px;
+                
+                margin: 30px;
+                
+            }
+            .column{
+                border: solid blue;
+                padding: 20px;
+                height: 25px;
+                row-gap: 20px;    
+                column-gap: 10px;
+            }
+
+            .container-8{
+                display: grid;
+                grid-template-columns: 1fr 2fr 1fr;
+                gap: 20px 10px;
+                margin: 30px;
+            }
+
+            .container-9{
+                display: grid;
+                grid-template-columns: minmax(100px, 30px);
+                gap: 10px;
+                margin: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-1">
+            <div class="column">this is 1st box</div>
+            <div class="column">2</div>
+            <div class="column">3</div>
+        </div>
+
+         <div class="container-2">
+            <div class="column">1</div>
+            <div class="column">2</div>
+            <div class="column">3</div>
+        </div>
+
+         <div class="container-3">
+            <div class="column">1</div>
+            <div class="column">2</div>
+            <div class="column">3</div>
+        </div>
+
+         <div class="container-4">
+            <div class="column">1</div>
+            <div class="column">2</div>
+            <div class="column">3</div>
+        </div>
+
+         <div class="container-5">
+            <div class="column">1</div>
+            <div class="column">2</div>
+            <div class="column">3</div>
+        </div>
+
+         <div class="container-6">
+            <div class="column">1</div> 
+            <div class="column">2</div>
+            <div class="column">3</div>
+        </div>
+
+         <div class="container-7">
+            <div class="column">1</div>
+            <div class="column">2</div>
+            <div class="column">3</div>
+        </div>
+
+        <div class="container-8">
+            <div class="column">1</div>
+            <div class="column">2</div>
+            <div class="column">3</div>
+        </div>
+
+        <div class="container-9">
+            <div class="column">1</div>
+            <div class="column">2</div>
+            <div class="column">3</div>
+        </div>
+    </body>
