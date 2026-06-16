@@ -1,0 +1,249 @@
+<!--Create flexbox.html with a nine-item flex container. Demonstrate every justify-content value with
+eight items: flex-start, flex-end, center, space-between, space-around, space-evenly
+169. Demonstrate every align-items value: stretch, flex-start, flex-end, center, baseline - make
+baseline visible by giving items different font sizes
+170. Demonstrate align-content on a wrapped container with fifteen items (requires flex-wrap: wrap):
+flex-start, flex-end, center, space-between, space-around, stretch
+171. Demonstrate flex-direction: row, row-reverse, column, column-reverse on separate containers-->
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width initial-scaling=1.0">
+        <title>Flexbox.html</title>
+        <style>
+            .container{
+                display: flex;
+                border: solid #6176b3;
+                height: 30vh;
+                width: 70vw;
+               
+                
+            }
+            .container div{
+                height: 10vh;
+                width: 10vw;
+                font-size: 25px;
+                border: solid rgb(0, 0, 0);
+                
+            }
+        </style>
+    </head>
+
+    <body>
+        
+        <main>
+            <h1>Flix container demonstration</h1>
+            <h2>justify-content:Start</h2>
+            <div class="container" style="justify-content: flex-start;">
+                <div>1st contianer</div>
+                <div>2nd contianer</div>
+                <div>3rd contianer</div>
+            </div>
+
+            <h2>justify-content:end</h2>
+            <div class="container" style="justify-content: flex-end;">
+                <div>1st contianer</div>
+                <div>2nd contianer</div>
+                <div>3rd contianer</div>
+            </div>
+            <h2>justify-content:center</h2>
+            <div class="container" style="justify-content: center;">
+                <div>1st contianer</div>
+                <div>2nd contianer</div>
+                <div>3rd contianer</div>
+            </div>
+            <h2>justify-content:around</h2>
+            <div class="container" style="justify-content: space-around;">
+                <div>1st contianer</div>
+                <div>2nd contianer</div>
+                <div>3rd contianer</div>
+            </div>
+            <h2>justify-content:even</h2>
+            <div class="container" style="justify-content:space-evenly;">
+                <div>1st contianer</div>
+                <div>2nd contianer</div>
+                <div>3rd contianer</div>
+            </div>
+
+            <h2>Justify-content:between</h2>
+            <div class="container" style="justify-content: space-between;">
+                <div>1st contianer</div>
+                <div>2nd contianer</div>
+                <div>3rd contianer</div>
+            </div>
+
+
+             <h2>align-item:flex-start</h2>
+            <div class="container" style="align-items: flex-start;">
+                <div>1st contianer</div>
+                <div>2nd contianer</div>
+                <div>3rd contianer</div>
+            </div>
+
+            <h2>align-items: center</h2>
+            <div class="container" style="align-items: center;">
+                <div>1st contianer</div>
+                <div>2nd contianer</div>
+                <div>3rd contianer</div>
+            </div>
+            <h2>align-items: flex-end</h2>
+            <div class="container" style="align-items: flex-end;">
+                <div>1st contianer</div>
+                <div>2nd contianer</div>
+                <div>3rd contianer</div>
+            </div>
+            <h2>align-items: baseline</h2>
+            <div class="container" style="align-items: baseline;">
+                <div>1st contianer</div>
+                <div>2nd contianer</div>
+                <div>3rd contianer</div>
+            </div>
+
+
+
+
+
+            <h2>This is flex-wrap demonstration start</h2>
+            <div class="container" style="flex-wrap: wrap; height: 70vh; width: 70vw; align-content: flex-start;">
+                <div>1st contianer</div>
+                <div>2nd contianer</div>
+                <div>3rd contianer</div>
+                <div>st contianer</div>
+                <div>4nd contianer</div>
+                <div>5rd contianer</div>
+                <div>7st contianer</div>
+                <div>8nd contianer</div>
+                <div>9rd contianer</div>
+                <div>10st contianer</div>
+                <div>11nd contianer</div>
+                <div>12rd contianer</div>
+                <div>13st contianer</div>
+                <div>14nd contianer</div>
+                <div>15rd contianer</div>
+            </div>
+            <h2>This is flex-wrap demonstration end</h2>
+            <div class="container" style="flex-wrap: wrap; height: 70vh; width: 70vw; align-content: flex-end;">
+                <div>1st contianer</div>
+                <div>2nd contianer</div>
+                <div>3rd contianer</div>
+                <div>st contianer</div>
+                <div>4nd contianer</div>
+                <div>5rd contianer</div>
+                <div>7st contianer</div>
+                <div>8nd contianer</div>
+                <div>9rd contianer</div>
+                <div>10st contianer</div>
+                <div>11nd contianer</div>
+                <div>12rd contianer</div>
+                <div>13st contianer</div>
+                <div>14nd contianer</div>
+                <div>15rd contianer</div>
+            </div>
+                <h2>This is flex-wrap demonstration center</h2>
+                 <div class="container" style="flex-wrap: wrap; height: 70vh; width: 70vw; align-content: center;">
+                <div>1st contianer</div>
+                <div>2nd contianer</div>
+                <div>3rd contianer</div>
+                <div>st contianer</div>
+                <div>4nd contianer</div>
+                <div>5rd contianer</div>
+                <div>7st contianer</div>
+                <div>8nd contianer</div>
+                <div>9rd contianer</div>
+                <div>10st contianer</div>
+                <div>11nd contianer</div>
+                <div>12rd contianer</div>
+                <div>13st contianer</div>
+                <div>14nd contianer</div>
+                <div>15rd contianer</div>
+            </div>
+
+            <h2>This is flex-wrap demonstration space around</h2>
+             <div class="container" style="flex-wrap: wrap; height: 70vh; width: 70vw; align-content: space-around;">
+                <div>1st contianer</div>
+                <div>2nd contianer</div>
+                <div>3rd contianer</div>
+                <div>st contianer</div>
+                <div>4nd contianer</div>
+                <div>5rd contianer</div>
+                <div>7st contianer</div>
+                <div>8nd contianer</div>
+                <div>9rd contianer</div>
+                <div>10st contianer</div>
+                <div>11nd contianer</div>
+                <div>12rd contianer</div>
+                <div>13st contianer</div>
+                <div>14nd contianer</div>
+                <div>15rd contianer</div>
+             </div>
+
+             <h2>This is flex-wrap demonstration space between</h2>
+              <div class="container" style="flex-wrap: wrap; height: 70vh; width: 70vw; align-content: space-between;">
+                <div>1st contianer</div>
+                <div>2nd contianer</div>
+                <div>3rd contianer</div>
+                <div>st contianer</div>
+                <div>4nd contianer</div>
+                <div>5rd contianer</div>
+                <div>7st contianer</div>
+                <div>8nd contianer</div>
+                <div>9rd contianer</div>
+                <div>10st contianer</div>
+                <div>11nd contianer</div>
+                <div>12rd contianer</div>
+                <div>13st contianer</div>
+                <div>14nd contianer</div>
+                <div>15rd contianer</div>
+              </div>
+              <h2>This is flex-wrap demonstration stretch</h2>
+               <div class="container" style="flex-wrap: wrap; height: 70vh; width: 70vw; align-content: stretch;">
+                <div>1st contianer</div>
+                <div>2nd contianer</div>
+                <div>3rd contianer</div>
+                <div>st contianer</div>
+                <div>4nd contianer</div>
+                <div>5rd contianer</div>
+                <div>7st contianer</div>
+                <div>8nd contianer</div>
+                <div>9rd contianer</div>
+                <div>10st contianer</div>
+                <div>11nd contianer</div>
+                <div>12rd contianer</div>
+                <div>13st contianer</div>
+                <div>14nd contianer</div>
+                <div>15rd contianer</div>
+               </div>
+
+
+               <h2>Flex directions-row</h2>
+            <div class="container" style="flex-direction: row;">
+                <div>1st contianer</div>
+                <div>2nd contianer</div>
+                <div>3rd contianer</div>
+            </div>
+
+            <h2>Flex-row reverse</h2>
+            <div class="container" style="flex-direction: row-reverse;">
+                <div>1st contianer</div>
+                <div>2nd contianer</div>
+                <div>3rd contianer</div>
+            </div>
+
+            <h2>flex-dire:column</h2>
+            <div class="container" style="flex-direction: column;">
+                <div>1st contianer</div>
+                <div>2nd contianer</div>
+                <div>3rd contianer</div>
+            </div>
+
+            <h2>flex-dire:column reverse</h2>
+            <div class="container" style="flex-direction: column-reverse;">
+                <div>1st contianer</div>
+                <div>2nd contianer</div>
+                <div>3rd contianer</div>
+            </div>
+        </main>
+
+    </body>
+</html>
