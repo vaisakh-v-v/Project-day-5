@@ -1,0 +1,82 @@
+<!-- Create a full magazine layout using grid-template-areas with at least a 4-column, 5-row grid.
+Define areas: header, nav, hero, article1, article2, sidebar, ad, footer
+212. Place every section using grid-area: header; etc.
+213. Write a media query at 900px that redefines the areas to a two-column layout
+214. Write a media query at 600px that redefines to a single column with sections in reading order -->
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>About Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width initial-scaling=1.0" />
+    <meta name="description" content="This is a home page" />
+    <style>
+      .container-1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+          "header hero hero nav"
+          "article1 article1 article1 article1 "
+          "sidebar sidebar sidebar sidebar"
+          "article2 article2 article2 article2"
+          "ad ad footer footer";
+
+        background-color: beige;
+      }
+
+      .container-1 div {
+        border: solid black;
+        height: 100px;
+      }
+      @media (max-width:900px) {
+        .container-1 {
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+          grid-template-areas:
+            "header header"
+            "hero hero"
+            "nav aav"
+            "sidebar sidebar"
+            "article1 article1"
+            "article2 article2"
+            "ad ad"
+            "footer footer";
+        }
+      }
+       @media (max-width:  600){
+                .container-1{
+                    grid-template-columns: 1fr ;
+                    gap: 20px;
+                     grid-template-areas:
+                     "header "
+                     "hero "
+                     "nav "
+                     "sidebar "
+                     "article1 "
+                     "article2 "
+                     "ad "
+                     "footer "
+                }
+            } 
+    </style>
+  </head>
+  <body>
+    <div class="container-1">
+      <div class="column1" style="grid-area: header";></div>
+      <div class="column2" style="grid-area: hero";>2</div>
+
+      <div class="column3" style="grid-area: nav";>3</div>
+
+      <div class="column7" style="grid-area: article1";>7</div>
+
+      <div class="column9" style="grid-area: sidebar";>9</div>
+
+      <div class="column15" style="grid-area: article2";>15</div>
+
+      <div class="column17" style="grid-area: ad";>17</div>
+
+      <div class="column19" style="grid-area: footer";>19</div>
+    </div>
+  </body>
+</html>
