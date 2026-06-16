@@ -1,0 +1,249 @@
+<!--Build a sticky navigation bar: logo on the left, navigation links centred (using flex: 1 and
+justify-content: center on a nav element), and Login/Sign Up buttons on the right
+178. Add gap for consistent spacing between nav items. Add hover and focus-visible styles.
+179. At 768px screen width, hide the nav links (set display: none). Leave a hamburger placeholder
+button visible (no JavaScript yet).
+180. The bar must stay visible on scroll: position: sticky, top: 0, z-index: 100. Add a subtle
+box-shadow when sticky-->
+
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width initial-scaling=1.0" />
+    <title>Flexbox.html</title>
+    <style>
+      .hamburger-button {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .sticky {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        overflow: hidden;
+        background: #ffffff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      header {
+        container-type: scroll-state;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        > .navbar {
+          @container scroll-state(stuck: top) {
+            box-shadow: 10px 10px 10px rgb(175, 19, 19);
+          }
+        }
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 50px;
+        background-color: #1362bd;
+        border: solid red;
+      }
+
+      .logo img {
+        height: 40px;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-links li {
+        margin: 0 20px;
+      }
+
+      .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+      }
+
+      .nav-links a:hover {
+        color: #4caf50;
+      }
+
+      .btn-signup {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+
+      .btn-signup:hover {
+        background-color: #45a049;
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .hamburger-button {
+          display: block;
+        }
+
+        .btn-signup {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="sticky">
+      <nav class="navbar">
+        <div class="logo">
+          <a href="#"><img src="google-logo.jpg" alt="logo" /></a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="navbar.html">About</a></li>
+          <li><a href="navbar.html">Home page</a></li>
+          <li><a href="navbar.html">Resister</a></li>
+          <li><a href="navbar.html">login</a></li>
+        </ul>
+
+        <div class="sign-up">
+          <a href="#" class="btn-signup">Sign up</a>
+        </div>
+        <button class="hamburger-button" aria-label="Toggle menu">
+          &#9776;
+        </button>
+      </nav>
+    </header>
+
+    <main class="mainc">
+      <h1 style="margin: 20px; width: 20vw; color: brown">
+        This is just a random content
+      </h1>
+      <p style="margin: 20px; width: 20vw; color: brown" ;>
+        In a rapidly changing world, learning cannot stop at the end of formal
+        education. Lifelong learning—the continuous, voluntary pursuit of
+        knowledge for either personal or professional reasons—has become an
+        absolute necessity. It empowers individuals to adapt to technological
+        advancements, fosters personal growth, and enhances overall cognitive
+        health. Embracing this mindset is essential for thriving in the modern
+        era.The primary benefit of lifelong learning is the ability to adapt to
+        an evolving professional landscape. Technological disruptions constantly
+        reshape industries, rendering some skills obsolete while creating demand
+        for new ones. Professionals who commit to continuous learning remain
+        relevant and employable. By consistently updating their knowledge base,
+        individuals can pivot in their careers, seize new opportunities, and
+        navigate economic uncertainties with confidence. This adaptability
+        ensures long-term career resilience in a competitive global
+        market.Beyond professional advantages, lifelong learning is vital for
+        profound personal enrichment. Exploring new subjects broadens our
+        horizons and deepens our understanding of the world. Whether it involves
+        studying a new language, mastering a craft, or learning about different
+        cultures, the pursuit of knowledge nurtures curiosity and creativity. It
+        allows individuals to discover hidden passions and engage more deeply
+        with their communities, ultimately leading to a more fulfilling and
+        well-rounded life.Furthermore, continuous intellectual engagement is
+        crucial for maintaining cognitive health. Research has shown that
+        challenging the brain with new information and complex tasks builds
+        cognitive reserve. This process helps delay the onset of age-related
+        cognitive decline and keeps the mind sharp. Just as physical exercise
+        strengthens the body, acquiring new skills acts as a vital workout for
+        the brain, promoting mental agility and emotional well-being throughout
+        one's lifetime.Ultimately, lifelong learning is more than just a tool
+        for professional development; it is a philosophy that enriches every
+        aspect of human existence. It prepares individuals for unforeseen
+        challenges, cultivates a richer appreciation of the world, and preserves
+        cognitive vitality. In an era where information is instantly accessible
+      </p>
+      <p style="margin: 20px; width: 20vw; color: brown" ;>
+        In a rapidly changing world, learning cannot stop at the end of formal
+        education. Lifelong learning—the continuous, voluntary pursuit of
+        knowledge for either personal or professional reasons—has become an
+        absolute necessity. It empowers individuals to adapt to technological
+        advancements, fosters personal growth, and enhances overall cognitive
+        health. Embracing this mindset is essential for thriving in the modern
+        era.The primary benefit of lifelong learning is the ability to adapt to
+        an evolving professional landscape. Technological disruptions constantly
+        reshape industries, rendering some skills obsolete while creating demand
+        for new ones. Professionals who commit to continuous learning remain
+        relevant and employable. By consistently updating their knowledge base,
+        individuals can pivot in their careers, seize new opportunities, and
+        navigate economic uncertainties with confidence. This adaptability
+        ensures long-term career resilience in a competitive global
+        market.Beyond professional advantages, lifelong learning is vital for
+        profound personal enrichment. Exploring new subjects broadens our
+        horizons and deepens our understanding of the world. Whether it involves
+        studying a new language, mastering a craft, or learning about different
+        cultures, the pursuit of knowledge nurtures curiosity and creativity. It
+        allows individuals to discover hidden passions and engage more deeply
+        with their communities, ultimately leading to a more fulfilling and
+        well-rounded life.Furthermore, continuous intellectual engagement is
+        crucial for maintaining cognitive health. Research has shown that
+        challenging the brain with new information and complex tasks builds
+        cognitive reserve. This process helps delay the onset of age-related
+        cognitive decline and keeps the mind sharp. Just as physical exercise
+        strengthens the body, acquiring new skills acts as a vital workout for
+        the brain, promoting mental agility and emotional well-being throughout
+        one's lifetime.Ultimately, lifelong learning is more than just a tool
+        for professional development; it is a philosophy that enriches every
+        aspect of human existence. It prepares individuals for unforeseen
+        challenges, cultivates a richer appreciation of the world, and preserves
+        cognitive vitality. In an era where information is instantly accessible
+      </p>
+
+      <p style="margin: 20px; width: 20vw; color: brown" ;>
+        In a rapidly changing world, learning cannot stop at the end of formal
+        education. Lifelong learning—the continuous, voluntary pursuit of
+        knowledge for either personal or professional reasons—has become an
+        absolute necessity. It empowers individuals to adapt to technological
+        advancements, fosters personal growth, and enhances overall cognitive
+        health. Embracing this mindset is essential for thriving in the modern
+        era.The primary benefit of lifelong learning is the ability to adapt to
+        an evolving professional landscape. Technological disruptions constantly
+        reshape industries, rendering some skills obsolete while creating demand
+        for new ones. Professionals who commit to continuous learning remain
+        relevant and employable. By consistently updating their knowledge base,
+        individuals can pivot in their careers, seize new opportunities, and
+        navigate economic uncertainties with confidence. This adaptability
+        ensures long-term career resilience in a competitive global
+        market.Beyond professional advantages, lifelong learning is vital for
+        profound personal enrichment. Exploring new subjects broadens our
+        horizons and deepens our understanding of the world. Whether it involves
+        studying a new language, mastering a craft, or learning about different
+        cultures, the pursuit of knowledge nurtures curiosity and creativity. It
+        allows individuals to discover hidden passions and engage more deeply
+        with their communities, ultimately leading to a more fulfilling and
+        well-rounded life.Furthermore, continuous intellectual engagement is
+        crucial for maintaining cognitive health. Research has shown that
+        challenging the brain with new information and complex tasks builds
+        cognitive reserve. This process helps delay the onset of age-related
+        cognitive decline and keeps the mind sharp. Just as physical exercise
+        strengthens the body, acquiring new skills acts as a vital workout for
+        the brain, promoting mental agility and emotional well-being throughout
+        one's lifetime.Ultimately, lifelong learning is more than just a tool
+        for professional development; it is a philosophy that enriches every
+        aspect of human existence. It prepares individuals for unforeseen
+        challenges, cultivates a richer appreciation of the world, and preserves
+        cognitive vitality. In an era where information is instantly accessible
+      </p>
+    </main>
+  </body>
+</html>
