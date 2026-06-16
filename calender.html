@@ -1,0 +1,166 @@
+<!-- Build a month calendar using CSS Grid: seven equal columns (Mon–Sun). Rows auto-generate
+for each week.
+224. Place the first day of the month using grid-column based on its day of the week. Subsequent
+days flow naturally.
+225. Mark some dates as events (different background colour). Mark today's date with a circle using
+::before
+226. Add a narrow Week column at the start: make the main grid 8 columns, add a header and week
+number in column 1, push day columns to 2–8
+227. Below 480px: display as a single-column day list -->
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>About Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width initial-scaling=1.0" />
+    <style>
+      .calendar-wrapper {
+        max-width: 100vw;
+        height: 100vh;
+        font: 45px;
+      }
+      .calendar {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+      }
+
+      .first-day {
+        grid-column-start: 4;
+      }
+
+      .day-name {
+        background: #6e4e4e;
+        font-size: xx-large;
+        font-weight: 300;
+      }
+
+      h1 {
+        text-align: center;
+      }
+      ol {
+        list-style: none;
+        margin: 0;
+        padding: 10px;
+        text-align: center;
+      }
+      li {
+        padding: 30px;
+      }
+      .birthday{
+        color: red;
+      }
+      .dates{
+        font-size: xx-large;
+        font-weight: 300;
+
+      }
+      .week1{
+        grid-row-start:2 ;
+        font-size: xx-large;
+        font-weight: 300;
+      }
+      .week2{
+        grid-row-start:3 ;
+        font-size: xx-large;
+        font-weight: 300;
+      }
+      .week3{
+        grid-row-start:4 ;
+        font-size: xx-large;
+        font-weight: 300;
+      }
+      .week4{
+        grid-row-start:5 ;
+        font-size: xx-large;
+        font-weight: 300;
+      }
+      .week5{
+        grid-row-start:6 ;
+        font-size: xx-large;
+        font-weight: 300;
+      }
+      .first{
+        grid-column-start: 2;
+        font-size: xx-large;
+        font-weight: 300;
+      }
+      @media (max-width:480px){
+        .calendar{
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .day-name{
+            display: none;
+        }
+        .week1{
+            display: none;
+        }
+        .week2{
+            display: none;
+        }
+        .week3{
+            display: none;
+        }
+        .week4{
+            display: none;
+        }
+        .week5{
+            display: none;
+        }
+        
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calendar-wrapper ">
+      <h1>DECEMBER 2026</h1>
+      <ol class="calendar">
+        <li class="week1">Week-1</li>
+        <li class="week2">Week-2</li>
+        <li class="week3">Week-3</li>
+        <li class="week4">Week-4</li>
+        <li class="week5">Week-5</li>
+        <li class="day-name first">Sun</li>
+        <li class="day-name">Mon</li>
+        <li class="day-name">Tue</li>
+        <li class="day-name">Wed</li>
+        <li class="day-name">Thu</li>
+        <li class="day-name">Fri</li>
+        <li class="day-name">Sat</li>
+
+        <li class="first-day dates">1</li>
+        <li class="dates">2</li>
+        <li class="dates">3</li>
+        <li class="dates">4</li>
+        <li class="dates">5</li>
+        <li class="birthday dates">6</li>
+        <li class="dates">7</li>
+        <li class="dates">8</li>
+        <li class="dates">9</li>
+        <li class="dates">10</li>
+        <li class="dates">11</li>
+        <li class="dates">12</li>
+        <li class="dates">13</li>
+        <li class="dates">14</li>
+        <li class="dates">15</li>
+        <li class="dates">16</li>
+        <li class="dates">17</li>
+        <li class="dates">18</li>
+        <li class="dates">19</li>
+        <li class="dates">20</li>
+        <li class="dates">21</li>
+        <li class="dates">22</li>
+        <li class="dates">23</li>
+        <li class="dates">24</li>
+        <li class="dates">25</li>
+        <li class="dates">26</li>
+        <li class="dates">27</li>
+        <li class="dates">28</li>
+        <li class="dates">29</li>
+        <li class="dates">30</li>
+        <li class="dates">31</li>
+      </ol>
+    </div>
+  </body>
+</html>
