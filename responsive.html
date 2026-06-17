@@ -1,0 +1,171 @@
+<!-- Create responsive.html. Write all base styles for the narrowest screen first (320px). Add
+min-width breakpoints upward: 480px, 768px, 1024px, 1280px
+238. A navigation section: icon-only at 320px, text labels visible at 480px, horizontal at 768px, with a
+secondary nav visible at 1024px+
+239. A content grid: one column at 320px, two columns at 600px, three at 900px, four at 1280px -
+using the same container, only changing grid-template-columns
+240. Test every breakpoint in Chrome DevTools responsive mode -->
+
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Home Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0" />
+    <style>
+        .nav-bar{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+        }
+        .primary-nav, .secondary-nav{
+            display: flex;
+            list-style: none;
+            gap: 1rem;
+        }
+        .primary-nav a{
+            display:none;
+        }
+        .secondary-nav{
+            display: none;
+        }
+
+        .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 30px;
+      }
+
+       .product-card img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+      }
+       .product-card {
+        background: #ffffff;
+        border: 1px solid #0c0b0b;
+        border-radius: 8px;
+        padding: 16px;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+
+        @media (min-width: 480px) {
+            .primary-nav a {
+            display: inline;
+            }
+        }
+
+        @media (min-width: 768px) {
+        .navbar {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        }
+
+        @media (min-width: 1024px) {
+            .secondary-nav {
+                display: flex;
+            }
+            }
+
+            
+          @media (min-width: 600px) {
+            .container{
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+          @media (min-width: 900px) {
+            .container{
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+          @media (min-width: 1280px) {
+            .container{
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+        }
+
+    </style>
+  </head>
+  <body>
+    <nav class="nav-bar">
+        <ul class="nav-link primary-nav">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#home">About</a></li>
+            <li><a href="#home">Services</a></li>
+            <li><a href="#home">Team</a></li>
+            
+        </ul>
+
+        <ul class="nav-link secondary-nav">
+            <li><a href="#home">help</a></li>
+            <li><a href="#home">Policies</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+
+      <div class="product-card">
+        <img
+          src="https://www.livemint.com/lm-img/img/2025/08/29/960x540/iPhone_17_Pro_1756450040676_1756450040854.jpg"
+          alt="Iphone17 pro"
+        />
+        <h1>Iphone17 pro</h1>
+        <p>
+          Introducing iPhone 17 Pro and iPhone 17 Pro Max, designed from the
+          inside out to be the most powerful iPhone models ever made. At the
+          core of the new design is a heat-forged aluminium unibody enclosure
+          that maximises performance, battery capacity and durability.
+        </p>
+        <button type="button">Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img
+          src="https://www.livemint.com/lm-img/img/2025/08/29/960x540/iPhone_17_Pro_1756450040676_1756450040854.jpg"
+          alt="Iphone17 pro"
+        />
+        <h1>Iphone17 pro</h1>
+        <p>
+          Introducing iPhone 17 Pro and iPhone 17 Pro Max, designed from the
+          inside out to be the most powerful iPhone models ever made. At the
+          core of the new design is a heat-forged aluminium unibody enclosure
+          that maximises performance, battery capacity and durability.
+        </p>
+        <button type="button">Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img
+          src="https://www.livemint.com/lm-img/img/2025/08/29/960x540/iPhone_17_Pro_1756450040676_1756450040854.jpg"
+          alt="Iphone17 pro"
+        />
+        <h1>Iphone17 pro</h1>
+        <p>
+          Introducing iPhone 17 Pro and iPhone 17 Pro Max, designed from the
+          inside out to be the most powerful iPhone models ever made. At the
+          core of the new design is a heat-forged aluminium unibody enclosure
+          that maximises performance, battery capacity and durability.
+        </p>
+        <button type="button">Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img
+          src="https://www.livemint.com/lm-img/img/2025/08/29/960x540/iPhone_17_Pro_1756450040676_1756450040854.jpg"
+          alt="Iphone17 pro"
+        />
+        <h1>Iphone17 pro</h1>
+        <p>
+          Introducing iPhone 17 Pro and iPhone 17 Pro Max, designed from the
+          inside out to be the most powerful iPhone models ever made. At the
+          core of the new design is a heat-forged aluminium unibody enclosure
+          that maximises performance, battery capacity and durability.
+        </p>
+        <button type="button">Buy Now</button>
+      </div>
+    </div>
+  </body>
+  </html>
