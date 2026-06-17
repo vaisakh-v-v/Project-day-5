@@ -1,0 +1,183 @@
+<!--Build a portfolio project showcase section that uses Grid for the overall tile layout and Flexbox
+inside each tile for the image, tags, title, and description
+234. Featured project tiles span 2 columns and 2 rows using grid-column: span 2 and grid-row: span
+2
+235. Non-featured tiles have an image-on-top layout (Flexbox column). Featured tiles have an
+image-on-left layout (Flexbox row).
+236. Add hover overlay content (project name + two links) using transform and transition on an
+overlay div-->
+
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Home Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0" />
+    <style>
+        body{
+           background: gray; 
+        }
+      .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 20px;
+        padding: 30px;
+        background-color: grey;
+        margin: 15em;
+      }
+
+      .grid-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 5%;
+        border: solid black;
+      }
+
+      .prduct-img img {
+        z-index: 30;
+      }
+      .featured {
+        grid-row: span 2;
+        grid-column: span 2;
+      }
+
+      .product-img {
+        position: relative;
+
+        overflow: hidden;
+      }
+      .product-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0 0 0 0.6);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+      }
+
+      .product-img:hover .product-content {
+        opacity: 1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="grid-container">
+      <div class="product featured">
+        <div class="product-img">
+          <img src="https://picsum.photos/id/237/200/300" alt="Iphone17 pro" />
+
+          <div class="product-content">
+            <h1>Featured</h1>
+            <p>
+              Introducing iPhone 17 Pro and iPhone 17 Pro Max, designed from the
+              inside out to be the most powerful iPhone models ever made. At the
+              core of the new design is a heat-forged aluminium unibody
+              enclosure that maximises performance, battery capacity and
+              durability.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="product featured">
+        <div class="product-img">
+          <img
+            src="https://picsum.photos/seed/picsum/200/300"
+            alt="Iphone17 pro"
+          />
+
+          <div class="product-content">
+            <h1>Featured</h1>
+            <p>
+              Introducing iPhone 17 Pro and iPhone 17 Pro Max, designed from the
+              inside out to be the most powerful iPhone models ever made. At the
+              core of the new design is a heat-forged aluminium unibody
+              enclosure that maximises performance, battery capacity and
+              durability.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="product">
+        <div class="product-img">
+          <img
+            src="https://picsum.photos/200/300?grayscale"
+            alt="Iphone17 pro"
+          />
+
+          <div class="product-content">
+            <h1>Non-Featured</h1>
+            <p>
+              Introducing iPhone 17 Pro and iPhone 17 Pro Max, designed from the
+              inside out to be the most powerful iPhone models ever made. At the
+              core of the new design is a heat-forged aluminium unibody
+              enclosure that maximises performance, battery capacity and
+              durability.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="product">
+        <div class="product-img">
+          <img src="https://picsum.photos/200/300/?blur" alt="Iphone17 pro" />
+
+          <div class="product-content">
+            <h1>Non-Featured</h1>
+            <p>
+              Introducing iPhone 17 Pro and iPhone 17 Pro Max, designed from the
+              inside out to be the most powerful iPhone models ever made. At the
+              core of the new design is a heat-forged aluminium unibody
+              enclosure that maximises performance, battery capacity and
+              durability.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-img">
+          <img src="https://picsum.photos/200/300.jpg" alt="Iphone17 pro" />
+
+          <div class="product-content">
+            <h1>Non-Featured</h1>
+            <p>
+              Introducing iPhone 17 Pro and iPhone 17 Pro Max, designed from the
+              inside out to be the most powerful iPhone models ever made. At the
+              core of the new design is a heat-forged aluminium unibody
+              enclosure that maximises performance, battery capacity and
+              durability.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="product">
+        <div class="product-img">
+          <img src="https://picsum.photos/200/300" alt="Iphone17 pro" />
+
+          <div class="product-content">
+            <h1>Non-Featured</h1>
+            <p>
+              Introducing iPhone 17 Pro and iPhone 17 Pro Max, designed from the
+              inside out to be the most powerful iPhone models ever made. At the
+              core of the new design is a heat-forged aluminium unibody
+              enclosure that maximises performance, battery capacity and
+              durability.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
