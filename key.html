@@ -1,0 +1,158 @@
+<!-- Create a CSS spinner loading animation using @keyframes rotate and animation: rotate 1s
+linear infinite
+250. Create a skeleton loading animation: a shimmer effect using a moving linear-gradient
+background and animation-direction: alternate
+251. Create a card entry animation: the card slides up 20px and fades in when it gains the
+class=visible (add the class manually in DevTools to test)
+252. Create a notification bell shake animation triggered by :hover
+253. Wrap ALL animations in @media (prefers-reduced-motion: no-preference) - they must be
+completely off by default -->
+
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Home Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+      .loader {
+        border: 16px solid #af9f9f;
+        border-radius: 50%;
+        border-top: 16px solid #09309b;
+        width: 100px;
+        height: 100px;
+        
+      }
+      .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        padding: 30px;
+      }
+
+      .product-card img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+      }
+      .product-card {
+        background: #ffffff;
+        border: 1px solid #0c0b0b;
+        border-radius: 8px;
+        padding: 16px;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+      
+      .bell-icon {
+        position: fixed;
+        top: 40%;
+        right: 45%;
+        width: 70px;
+        height: 70px;
+        padding: 20px;
+        border-radius: 50%;
+      }
+      .bell-icon svg {
+        position: absolute;
+        left: 50px;
+        top: 50%;
+        width: 60px;
+        height: 60px;
+        transform: translate(-50%, -50%);
+        
+      }
+
+       @keyframes slideUpFadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes shake {
+        0% {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        25% {
+          transform: translate(-50%, -50%) rotate(-10deg);
+        }
+        50% {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        75% {
+          transform: translate(-50%, -50%) rotate(-10deg);
+        }
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .visible {
+        animation: slideUpFadeIn 0.6s ease-out forwards;
+      }
+        .bell-icon:hover svg{
+        animation: shake 1s linear infinite;
+      }
+        .loader{
+            animation: spin 1s linear infinite;
+        }
+      }
+
+      
+    </style>
+  </head>
+  <body>
+    <h2>Loader</h2>
+
+    <div class="loader"></div>
+
+    <div class="container">
+      <div class="product-card visible">
+        <img
+          src="https://www.livemint.com/lm-img/img/2025/08/29/960x540/iPhone_17_Pro_1756450040676_1756450040854.jpg"
+          alt="Iphone17 pro"
+        />
+        <h1>Iphone17 pro</h1>
+        <p>
+          Introducing iPhone 17 Pro and iPhone 17 Pro Max, designed from the
+          inside out to be the most powerful iPhone models ever made. At the
+          core of the new design is a heat-forged aluminium unibody enclosure
+          that maximises performance, battery capacity and durability.
+        </p>
+        <button type="button">Buy Now</button>
+      </div>
+
+       <div class="bell-icon">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5"
+        />
+      </svg>
+    </div>
+    </div>
+
+   
+  </body>
+</html>
