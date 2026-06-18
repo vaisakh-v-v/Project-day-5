@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width initial-scaling=1.0" />
+    <title>pseudo page</title>
+    <style>
+      .hover:hover {
+        color: rgb(255, 4, 4);
+      }
+      .focus-visible:focus-visible {
+        color: rgb(179, 166, 255);
+      }
+      .focus:focus {
+        color: rgb(0, 0, 255);
+      }
+      .text-black {
+        color: black;
+      }
+      .none {
+        text-decoration: none;
+      }
+      input[type="checkbox"] {
+        appearance: none;
+      }
+      label::before {
+        width: 10px;
+        height: 10px;
+        border: black 2px solid;
+        display: inline-block;
+        content: "";
+        margin-right: 4px;
+      }
+      input[type="checkbox"]:checked + label::before {
+        content: "*";
+      }
+      .counter {
+        counter-increment: num;
+      }
+      .counter::before {
+        content: counter(num);
+      }
+      .tooltip {
+        position: relative;
+      }
+      .tooltip::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        left: 170px;
+        top: 20px;
+        opacity: 0%;
+      }
+      .tooltip:hover::after {
+        opacity: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a
+              href="https://www.apple.com/in-edu/store?afid=p240%7Cgo~cmp-11197666798~adg-106598431101~ad-808135809593_kwd-1693897271~dev-c~ext-~prd-~mca-~nt-search&cid=aos-in-kwgo-txt-edu-edu--"
+              class="Hover focus-visible text-black none"
+              >Home pagea tf Apple</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.apple.com/in-edu/store?afid=p240%7Cgo~cmp-11197666798~adg-106598431101~ad-808135809593_kwd-1693897271~dev-c~ext-~prd-~mca-~nt-search&cid=aos-in-kwgo-txt-edu-edu--"
+              class="Hover focus text-black none"
+              >About Page Apple</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.apple.com/in-edu/store?afid=p240%7Cgo~cmp-11197666798~adg-106598431101~ad-808135809593_kwd-1693897271~dev-c~ext-~prd-~mca-~nt-search&cid=aos-in-kwgo-txt-edu-edu--"
+              class="Hover focus text-black none"
+              >Services Page Apple</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.apple.com/in-edu/store?afid=p240%7Cgo~cmp-11197666798~adg-106598431101~ad-808135809593_kwd-1693897271~dev-c~ext-~prd-~mca-~nt-search&cid=aos-in-kwgo-txt-edu-edu--"
+              class="Hover focus text-black none"
+              >Teams Page Apple</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Pseudo classes</h1>
+      <section>
+        <div>
+          <input type="checkbox" name="checkbox" id="checkbox" />
+          <label for="checkbox">chechbox</label>
+        </div>
+      </section>
+
+      <section>
+        <ol style="counter-reset: num">
+          <li class="counter"></li>
+
+          <li class="counter"></li>
+          <li class="counter"></li>
+          <li class="counter"></li>
+        </ol>
+      </section>
+      <section>
+        <p class="tooltip" data.tooltip="this is a tooltip">
+          hover over to see a tooltip
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
