@@ -1,0 +1,105 @@
+<!-- Team: profile card grid with hover effect, department filter bar, responsive grid
+285. Contact: floating label animation on all inputs, custom styled checkbox and select (appearance:
+none), map embed styled in a rounded container, error and success states for form fields
+286. Both: 90+ Lighthouse Accessibility. Responsive. -->
+
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>contact Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <meta name="description" content="This is a contact page">
+    <style>
+      .input-container {
+        position: relative;
+        margin-top: 25px;
+      }
+
+      .input-container input {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        outline: none;
+      }
+
+      .input-container label {
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: white;
+        padding: 0 5px;
+        color: #888;
+        transition: all 0.3s ease;
+        pointer-events: none;
+      }
+
+      .input-container input:focus ~ label,
+      .input-container input:not(:placeholder-shown) ~ label {
+        top: 0;
+        transform: translateY(-50%) scale(0.85);
+        color: #007bff;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+    <h1>Contact Details</h1>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42039.146687799745!2d77.58572162211408!3d12.993458305166007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1649294a5637%3A0xb1f8b77e331512cf!2sBengaluru%20Palace!5e0!3m2!1sen!2sin!4v1780981485314!5m2!1sen!2sin"
+      width="600"
+      height="450"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Banglore"
+    ></iframe>
+    <h1>Contact Details</h1>
+    <section>
+      <h2>Contact us by filling the form</h2>
+      <form action="/" method="get">
+        <fieldset>
+          <div class="input-container">
+            <label for="name">Enter your name</label>
+            <p><input type="text" id="name" name="name" /></p>
+          </div>
+
+          <div class="input-container">
+            <label for="email">Enter your mail</label>
+            <p><input type="email" id="email" name="email" /></p>
+          </div>
+
+          <div class="input-container">
+            <label for="department">Enter your department</label>
+            <p>
+              <select id="department">
+                <option value="Software Engineer">Software Engineer</option>
+                <option value="Management">Management</option>
+              </select>
+            </p>
+          </div>
+          <div class="input-container">
+            <label for="phone">Enter your phone number</label>
+            <p><input type="tel" id="phone" name="phone" /></p>
+          </div>
+          <div class="input-container">
+            <label for="message">Message</label>
+            <p>
+              <textarea name="message" id="message"></textarea>
+            </p>
+          </div>
+
+          <div class="input-container">
+            <label for="newsettler">Subscribe</label>
+            <p><input type="checkbox" name="newsettler" id="newsettler" /></p>
+          </div>
+          <button type="submit">submit</button>
+        </fieldset>
+      </form>
+    </section>
+    </main>
+  </body>
+</html>
