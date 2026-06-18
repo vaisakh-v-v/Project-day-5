@@ -1,0 +1,193 @@
+<!-- Build a CSS-only accordion: a hidden checkbox input, a label (the visible header), and a
+content div. When the checkbox :checked, the content expands using max-height transition.
+259. Build a CSS-only tabs component using radio inputs: clicking a tab (label) changes which panel
+is visible using the :checked + adjacent sibling selector
+260. Build a star rating component: five reversed radio inputs. Selecting a star fills that star and all
+previous ones using the ~ (general sibling) selector and Unicode star characters in ::before
+261. None of these components use any JavaScript -->
+
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Teams Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width intial-scaling=1.0" />
+    <style>
+      .toggle-input {
+        display: none;
+      }
+
+      .toggle-header {
+        display: block;
+        padding: 15px;
+        background-color: grey;
+        color: rgb(19, 15, 15);
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .toggle-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease-in-out;
+        background-color: #f9f9f9;
+      }
+
+      .toggle-input:checked ~ .toggle-content {
+        max-height: 500px;
+      }
+      .tabs-container {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 600px;
+        margin: 20px;
+      }
+      .tabs-container input[type="radio"] {
+        display: none;
+      }
+
+      .tab-panel {
+        width: 100%;
+        order: 1;
+        display: none;
+        padding: 20px;
+        background-color: #c5a6a6;
+        border: 1px solid #520909;
+        border-radius: 0 4px 4px 4px;
+        box-sizing: border-box;
+      }
+
+      .tabs-container input[type="radio"]:checked + .tab-label {
+        background-color: #fff;
+        border-bottom: 1px solid #0a0a0a;
+        font-weight: bold;
+      }
+      .tabs-container input[type="radio"]:checked + .tab-label + .tab-panel {
+        display: block;
+      }
+
+      .tab-label {
+        padding: 10px 20px;
+        background-color: #7c4d4d;
+        border: 1px solid #ccc;
+        margin-right: 4px;
+        border-radius: 4px;
+      }
+
+      .rating {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: row-reverse; 
+        justify-content: flex-end;
+      }
+
+      .rating input {
+        display: none;
+      }
+
+      .rating label {
+        font-size: 24px;
+      }
+
+      .rating label:hover,
+      .rating label:hover ~ label {
+        color: orange;
+      }
+
+      .rating input:checked ~ label {
+        color: orange;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="collapsible-wrapper">
+      <input type="checkbox" id="toggle-collapse" class="toggle-input" />
+
+      <label for="toggle-collapse" class="toggle-header">Click to Expand</label>
+
+      <div class="toggle-content">
+        <div class="inner-content">
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since 1966, when designers at Letraset and James Mosley, the
+            librarian at St Bride Printing Library in London, took a 1914 Cicero
+            translation and scrambled it to make dummy text for Letraset's Body
+            Type sheets. It has survived not only many decades, but also the
+            leap into electronic typesetting, remaining essentially unchanged.
+            It was popularised thanks to these sheets and more recently with
+            desktop publishing software including versions of Lorem Ipsum.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs-container">
+      <input type="radio" id="tab-1" name="tab-group" checked />
+      <label for="tab-1" class="tab-label">Tab One</label>
+      <div class="tab-panel">
+        <h3>Lorem Ipsum1</h3>
+        <p>
+          1Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since 1966, when designers at Letraset and James Mosley, the librarian
+          at St Bride Printing Library in London, took a 1914 Cicero translation
+          and scrambled it to make dummy text for Letraset's Body Type sheets.
+          It has survived not only many decades, but also the leap into
+          electronic typesetting, remaining essentially unchanged. It was
+          popularised thanks to these sheets and more recently with desktop
+          publishing software including versions of Lorem Ipsum.
+        </p>
+      </div>
+
+      <input type="radio" id="tab-2" name="tab-group" />
+      <label for="tab-2" class="tab-label">Tab Two</label>
+      <div class="tab-panel">
+        <h3>Lorem Ipsum2</h3>
+        <p>
+          2Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since 1966, when designers at Letraset and James Mosley, the librarian
+          at St Bride Printing Library in London, took a 1914 Cicero translation
+          and scrambled it to make dummy text for Letraset's Body Type sheets.
+          It has survived not only many decades, but also the leap into
+          electronic typesetting, remaining essentially unchanged. It was
+          popularised thanks to these sheets and more recently with desktop
+          publishing software including versions of Lorem Ipsum.
+        </p>
+      </div>
+
+      <input type="radio" id="tab-3" name="tab-group" />
+      <label for="tab-3" class="tab-label">Tab Three</label>
+      <div class="tab-panel">
+        <h3>Lorem Ipsum3</h3>
+        <p>
+          3Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since 1966, when designers at Letraset and James Mosley, the librarian
+          at St Bride Printing Library in London, took a 1914 Cicero translation
+          and scrambled it to make dummy text for Letraset's Body Type sheets.
+          It has survived not only many decades, but also the leap into
+          electronic typesetting, remaining essentially unchanged. It was
+          popularised thanks to these sheets and more recently with desktop
+          publishing software including versions of Lorem Ipsum.
+        </p>
+      </div>
+    </div>
+
+    <form>
+      <div class="rating">
+        <input type="radio" id="star5" name="rating" value="5" />
+        <label for="star5">&#9733;</label>
+        <input type="radio" id="star4" name="rating" value="4" />
+        <label for="star4">&#9733;</label>
+        <input type="radio" id="star3" name="rating" value="3" />
+        <label for="star3">&#9733;</label>
+        <input type="radio" id="star2" name="rating" value="2" />
+        <label for="star2">&#9733;</label>
+        <input type="radio" id="star1" name="rating" value="1" />
+        <label for="star1">&#9733;</label>
+      </div>
+  </body>
+</html>
