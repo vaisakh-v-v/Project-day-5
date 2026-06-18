@@ -1,0 +1,8 @@
+@import "base.css";
+@import "layout.css";
+@import "component.css";
+
+ *, *::before, *::after { box-sizing:border-box;
+     margin: 0;
+      padding: 0;
+     }

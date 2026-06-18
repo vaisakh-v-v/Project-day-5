@@ -1,0 +1,42 @@
+.container {
+  display: grid;
+  /* Ensures the layout spans at least the full viewport height */
+  min-height: 100vh; 
+  
+  /* Creates 3 distinct rows: header(auto), body(1fr expands), footer(auto) */
+  grid-template-rows: auto 1fr auto; 
+  
+  /* Creates a 200px sidebar and lets the main content take the remaining space */
+  grid-template-columns: 200px 1fr; 
+  
+  /* Visually maps out the placement of your layout elements */
+  grid-template-areas: 
+    "header  header"
+    "sidebar main"
+    "footer  footer";
+    
+  gap: 15px; /* Adds space between grid tracks */
+}
+
+/* Assigning each element to its named grid area */
+header {
+  grid-area: header;
+  background-color: #f4f4f4;
+  height: 40px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: #e0e0e0;
+}
+
+main {
+  grid-area: main;
+  background-color: #ffffff;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #333333;
+  color: white;
+}

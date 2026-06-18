@@ -1,0 +1,169 @@
+<!-- Create a /css folder structure: base.css (reset, variables, typography), layout.css (header,
+footer, grid structure), components.css (cards, buttons, forms, badges), pages.css (page-specific
+rules), and main.css that imports all four using @import
+273.Add a global CSS reset: *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+274.Move your design system custom properties and type scale into base.css
+275.Commit: 'style: set up CSS architecture and design tokens' -->
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>About Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width intial-scaling=1.0" />
+    <meta name="description" content="This is a home page" />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>This is the Header</header>
+      <nav class="sidebar">
+        <ul class="nav-list">
+          <li><a href="index.html">Home-page</a></li>
+          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a href="services.html">Service</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <main>
+        <section>
+          <h2>Timeline</h2>
+
+          <dl>
+            <dt><strong>2004</strong></dt>
+            <dd>
+              Isolation: Each sandbox runs in a secure Firecracker microVM with
+              its own filesystem and network. Run untrusted code without
+              affecting production.
+            </dd>
+
+            <dt><strong>2006</strong></dt>
+            <dd>
+              Node.js and Python runtimes: Choose from node26, node24, node22,
+              or python3.13 with full root access. Install any package or binary
+              you need.
+            </dd>
+
+            <dt><strong>2008</strong></dt>
+            <dd>
+              System-privileged processes: Run workloads that need system-level
+              privileges, such as container runtimes like Docker, VPN clients,
+              and FUSE filesystem drivers.
+            </dd>
+
+            <dt><strong>2010</strong></dt>
+            <dd>
+              Fast startup: Sandboxes start in milliseconds, making them ideal
+              for real-time user interactions and latency-sensitive workloads.
+            </dd>
+
+            <dt><strong>2012</strong></dt>
+            <dd>
+              Persistent sandboxes: Sandboxes that auto-save state on stop and
+              resume where you left off. Persistence is the default. No manual
+              snapshot management needed.
+            </dd>
+          </dl><hr>
+        </section>
+        <section>
+          <div class="product-card">
+            <img
+              src="https://www.livemint.com/lm-img/img/2025/08/29/960x540/iPhone_17_Pro_1756450040676_1756450040854.jpg"
+              alt="Iphone17 pro"
+            />
+            <h1>Iphone17 pro</h1>
+            <p>
+              Introducing iPhone 17 Pro and iPhone 17 Pro Max, designed from the
+              inside out to be the most powerful iPhone models ever made. At the
+              core of the new design is a heat-forged aluminium unibody
+              enclosure that maximises performance, battery capacity and
+              durability.
+            </p>
+            <button type="button">Buy Now</button>
+          </div>
+        </section>
+        <hr />
+        <section>
+          <h3>blockquotes</h3>
+          <div>
+            <ul>
+              <li>
+                <blockquote
+                  cite="https://help.testimonial.to/en/articles/9452021-group-meta-tag"
+                >
+                  The "Quick & Punchy" Testimonial
+                </blockquote>
+              </li>
+              <li>
+                <blockquote
+                  cite="https://help.testimonial.to/en/articles/9452021-group-meta-tag"
+                >
+                  The "Emotional Transformation" Testimonial
+                </blockquote>
+              </li>
+              <li>
+                <blockquote
+                  cite="https://medium.com/geekculture/open-graph-tags-in-html-101-5d470bbdb78a"
+                >
+                  The "Metric-Driven" Testimonial
+                </blockquote>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <hr />
+
+        <section>
+          <h2>The 3 c's</h2>
+          <hr />
+          <article>
+            <h3>candore</h3>
+            <p>
+              Candor is the quality of being open, honest, and completely
+              sincere in speech or expression. It implies not just telling the
+              truth, but doing so without reserve, hesitation, or
+              sugarcoating—often when addressing difficult or sensitive
+              subjects.
+            </p>
+          </article>
+          <article>
+            <h3>commitment</h3>
+            <p>
+              A commitment is a dedicated promise, pledge, or firm decision to
+              take a specific action, support a cause, or fulfill an obligation
+              in the future. It represents the focused willingness to allocate
+              your time, energy, and resources to a specific goal, relationship,
+              or task.
+            </p>
+          </article>
+          <article>
+            <h3>Care</h3>
+            <p>
+              Care refers to the provision of what is needed for the health,
+              welfare, maintenance, and protection of someone or something. It
+              encompasses both the active process of looking after others and
+              the state of mental concern, attention, or caution applied to a
+              specific task.
+            </p>
+          </article>
+        </section>
+        <hr />
+
+        <section>
+          <h2>Contact Details</h2>
+          <p>call:<a href="tel:+918921093909">8921093909</a></p>
+          <p>
+            mail to:<a href="mailto:vaisakh.v@vonnue.com"
+              >vaisakh.v@vonnue.com</a
+            >
+          </p>
+        </section>
+        <hr />
+      </main>
+
+      <footer>
+        <p>This is About the company</p>
+      </footer>
+    </div>
+  </body>
+</html>
