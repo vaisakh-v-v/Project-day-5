@@ -1,0 +1,294 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+    color: #fff; 
+    font-size: 16px;
+    line-height: normal;
+    background-color: #121212;
+    height: 100%;
+    margin: 0;
+    display: flex;
+}
+
+.top-bar{
+    z-index: 2;
+    align-items: center;
+    gap: 16px;
+    height: 56px;
+    padding: 16px;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color:  #000000;
+}
+.logo {
+    align-items: center;
+    display: flex;
+}
+.sep{
+    flex-grow:1;
+}
+.right{
+    display: flex;
+    background-color:  #000000;
+    height: 48px;
+    align-items: center;
+}
+.hamburger{
+    align-items: center;
+    display: flex;
+    height: 48px;
+    width: 64px;
+}
+
+.container{
+    isolation: isolate;
+    padding-bottom: 70px;
+    flex-direction: column;
+    flex: 1;
+    display: flex;
+    overflow-y: auto;
+    height: 2543px;
+    width: 100vw;
+}
+
+.inner-container{
+    margin: 56px 0px 0px;
+    height:2417px;
+    width: 100vw;
+}
+
+.songs{
+    padding: 0 16px;
+    height: 1332px;
+}
+.trending{
+    height: 256px;
+}
+.tren{
+    overflow: hidden;
+    margin-top: 24px ;
+    margin-bottom: 12px;
+    height: 24px;
+    width: 288px;
+}
+.heading{
+    text-wrap: balance;
+    font-weight: 800;
+    font-size: 20px;
+    color:#fff;
+    font-family: spotify;
+}
+
+.album{
+    align-items: stretch;
+    gap: 0;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    flex-flow: row;
+    width: 100vw;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    display: flex;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    overflow-x: scroll;
+}
+.kath{
+    height: 220px;
+    margin-left: 8px;
+    padding: 8px;
+    width: 168px;
+    row-gap: 8px;
+    flex-direction: column;
+    display: inline-flex;
+}
+.kath1{
+    height: 220px;
+    padding: 8px;
+    width: 168px;
+    row-gap: 8px;
+    flex-direction: column;
+    display: inline-flex;
+    margin: 0%;
+}
+
+.image{
+    aspect-ratio: 1;
+    object-fit: cover;
+    inline-size: 100%;
+    min-inline-size: 152px;
+    border-radius: 4px;
+}
+.image-title{
+    align-items: flex-start;
+    max-height: 22px;
+    width: 152px;
+    gap: 2px;
+    flex-direction: column;
+    flex-basis: 100%;
+    display: flex;
+}
+.image-title span{
+    color:#fff ;
+    z-index: 1;
+    position: relative;
+    font-size: 16px;
+    font-family: spotify;
+}
+
+.footer{
+    height: 1061px;
+    width: 100vw;
+    text-align: center;
+}
+.footer-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 32px;
+}
+.inner-container{
+        width: 288px;
+        height: 696px;
+        display: flex;
+        flex-flow: column wrap;
+}
+.inner-footer{
+    background-color: rgb(18, 18, 18);
+    padding: 8px 16px 40px;
+    width: 100vw;
+    box-sizing: border-box;
+}
+.company{
+    width: 288px;
+    height: 120px;
+    margin-bottom: 24px;
+}
+
+.list-item{
+        overflow-wrap: break-word;
+    margin-block: 0;
+    padding-inline: 32px 0;
+}
+
+
+.bottom-bar{
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .9), #121212);
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    z-index: 10;
+}
+.bottom-icons{
+    align-items: center;
+    height: 70px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+.icon{
+    display: flex;
+    height: 70px;
+    width: 80px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.icon svg{
+    height: 24px;
+    width: 24px;
+    fill:#b3b3b3
+}
+.icon span{
+    font-weight: 400;
+    font-size: .6875rem;
+    font-family: spotify;
+}
+
+@font-face {
+        font-family: spotify;
+        src: url(SpotifyMixUI-Regular-76c92fb1a35c462f73429fa8865163eb.woff2);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .top{
+    height: 24px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-bar {
+  z-index: 2;
+  align-items: center;
+  gap: 16px;
+  height: 56px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.logo {
+  align-items: center;
+  display: flex;
+  height: 24px;
+
+}
+.right-side {
+  display: flex;
+  width: 100%;
+  height: 48px;
+  justify-content: flex-end;
+  align-items:center ;
+}
+.hamburger {
+  align-items: center;
+  display: flex;
+  height: 48px;
+  width: 64px;
+  margin-left: 16px;
+  padding: 0;
+  padding-top:0;
+  padding-right: 0;
+}
+.white-space {
+  flex: 1;
+}
+ */
