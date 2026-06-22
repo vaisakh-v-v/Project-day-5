@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head >
+     <title>Selector css</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width intial-scaling=1.0">
+    </head>
+    <style>
+        .list:nth-child(2n){
+            color: crimson;
+        }
+        input[type="email"]{
+            color: rgb(45, 224, 90);
+        }
+
+        article>p{
+            color: blue;
+        }
+        h2 + p{
+            color:red ;
+        }
+        .pseudo:hover{
+            color: brown;
+        }
+        .pseudo:focus{
+            color: midnightblue;
+        }
+        .pseudo p:first-child{
+            color: rgb(1, 26, 26);
+        }
+        .pseudo p:last-child{
+            color: darkgreen;
+        }
+        .pseudo p:nth-child{
+            color: black;
+        }
+        .list:nth-child(2n+1){
+            color: rgb(161, 45, 45);
+        }
+        .test::before{
+             content: "this is before";
+            background-color: yellow;
+            color: black;
+        }
+        .test::after{
+             content: "this is after";
+            background-color: yellow;
+            color: black;
+        }
+        a[href^="https"]:hover{
+            color: red;
+        }
+
+    </style>
+
+    <body>
+        <main>
+            <div>
+                <ul class="list">
+                    <li class="list">list 1</li>
+                    <li class="list">list 2</li>
+                    <li class="list">list 3</li>
+                    <li class="list">list 4</li>
+                    <li class="list"> list 5</li>
+                    <li class="list">list 6</li>
+                </ul>
+            </div>
+
+            <form action="/">
+
+                <div>
+                    <label for="email1">Enter email</label>
+                    <p><input type="email" id="email1" name="email1"></p>
+                </div>
+
+                <div>
+                    <label for="emai2l">Enter email</label>
+                    <p><input type="email" id="email2" name="email2"></p>
+                </div>
+
+                <div>
+                    <label for="email3">Enter email</label>
+                    <p><input type="email" id="email3" name="email3"></p>
+                </div>
+
+                <div>
+                    <label for="email4">Enter email</label>
+                    <p><input type="email" id="email4" name="email4"></p>
+                </div>
+            </form>
+
+            <p class="card"> This is a card class </p>
+            <p class="featured"> this is a featured class</p>
+
+            <article>
+
+                <p>This is a p tag inside article</p>
+            </article>
+            <article class="test">
+                <h2>This is a heading</h2>
+                <p>This p tag preceeds h2</p>
+            </article>
+
+            <section class="pseudo">
+                <p>This element has is 1st child pseudo-classes</p>
+                <p>This element has is 2st child pseudo-classes</p>
+                <p>This element has is 3st child pseudo-classes</p>
+                <p>This element has is 4st child pseudo-classes</p>
+            </section>
+            <p> p element wiit   before and after tag</p>
+            <a href="https://www.google.com">google</a>
+            <a href="www.google.com">without https</a>
+        </main>
+
+
+    </body>
+</html>
