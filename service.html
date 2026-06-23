@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Home Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0" />
+    <meta name="description" content="This is a service page" />
+    <meta property="og:title" content="Your Catchy Page Title" />
+    <meta
+      property="og:description"
+      content="To assist with generating dynamic Open Graph (OG) images, you can use the Vercel @vercel/og library to compute and generate social card images using Vercel Functions."
+    />
+    <style>
+      :root {
+        --bg-color: #ffffff;
+        --text-color: #333333;
+      }
+
+      body.dark-mode {
+        --bg-color: #1a1a1a;
+        --text-color: #ffffff;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease;
+      }
+      .header ul {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        list-style: none;
+        background-color: green;
+        padding: 20px;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+        padding: 30px;
+      }
+      .card1 {
+        background: #ac6a6a;
+        border: 1px solid #0c0b0b;
+        border-radius: 8px;
+        padding: 16px;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+      .card2 {
+        background: #be2020;
+        border: 1px solid #0c0b0b;
+        border-radius: 8px;
+        padding: 16px;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+      .card3 {
+        background: #ac6a6a;
+        border: 1px solid #0c0b0b;
+        border-radius: 8px;
+        padding: 16px;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+      .cta-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        padding: 30px;
+      }
+      @media (max-width: 768px) {
+        .container {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .container {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="header">
+        <ul class="nav-list">
+          <li><a href="index.html">Home-page</a></li>
+          <li><a href="teams.html">About</a></li>
+          <li><a href="services.html" aria-current="page">Service</a></li>
+          <li><button id="toggle-btn">Switch to Dark Mode</button></li>
+        </ul>
+      </nav>
+    </header>
+    <h1 style="font-weight: 800; font-size: 100px">services</h1>
+    <div class="container">
+      <div class="card1">
+        <h2>Custom Software Development Services</h2>
+        <p>
+          Transform your business ideas into scalable, robust digital solutions.
+          Our tailored consulting services help you navigate complex technical
+          decisions, ensuring your software aligns perfectly with your long-term
+          business goals and engineering capabilities.
+        </p>
+        <ul style="list-style: none">
+          <li>Software Consulting</li>
+          <li>UI/UX Design</li>
+          <li>Cloud & DevOps</li>
+        </ul>
+        <p><a href="https://vonnue.com/">Start your project with us</a></p>
+      </div>
+      <div class="card2">
+        <h2>AI Development & Integration Services</h2>
+        <p>
+          TAI Development & Integration Services involve designing, building,
+          and embedding intelligent technologies—such as machine learning
+          models, natural language processing (NLP), and computer vision—into
+          your existing software, applications, and workflows
+        </p>
+        <ul style="list-style: none">
+          <li>AI powered automation</li>
+          <li>Custom AI Models</li>
+          <li>AI Infrastructure Setup</li>
+        </ul>
+        <p><a href="https://vonnue.com/">Start your project with us</a></p>
+      </div>
+      <div class="card3">
+        <h2>Product Design Services</h2>
+        <p>
+          Product design services transform abstract ideas into market-ready,
+          functional, and aesthetically pleasing products. These services bridge
+          user needs with business goals, encompassing everything from initial
+          market research and prototyping to engineering and production, whether
+          for physical goods or digital software.
+        </p>
+        <ul style="list-style: none">
+          <li>End-to-End Product Design Solutions That Drive Results</li>
+          <li>Strategic Ideation</li>
+          <li>Product Roadmapping</li>
+        </ul>
+        <p><a href="https://vonnue.com/">Start your project with us</a></p>
+      </div>
+    </div>
+    <section>
+      <h2>Comparison Table</h2>
+      <table border="1px">
+        <tr style="background-color: #817373">
+          <th scope="col">Service Offering</th>
+          <th scope="col">Description & Typical Scope</th>
+          <th scope="col">Estimated Starting Price</th>
+          <th scope="col">Typical Timeline</th>
+        </tr>
+
+        <tr style="background-color: #ac6a6a">
+          <th>Software Consulting</th>
+          <td>
+            Strategic roadmapping, architecture review, technology stack
+            assessment, and digital transformation strategy.
+          </td>
+          <td>₹2,500-₹10,000 / hour</td>
+          <td>1 - 4 Weeks</td>
+        </tr>
+
+        <tr
+          style="
+            font-family:
+              &quot;Lucida Sans&quot;, &quot;Lucida Sans Regular&quot;,
+              &quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;,
+              Geneva, Verdana, sans-serif;
+            background-color: #be2020;
+          "
+        >
+          <th>AI Development & Integration</th>
+          <td>
+            Custom machine learning models, RAG (Retrieval-Augmented Generation)
+            applications, AI agents, and workflow automation.
+          </td>
+          <td>₹3 Lakh- ₹15 Lakh+</td>
+          <td>4 - 16 Weeks</td>
+        </tr>
+
+        <tr style="background-color: #ac6a6a">
+          <th>Product Design Services</th>
+          <td>
+            UI/UX research, heuristic evaluations, SaaS application design,
+            wireframing, and interactive prototyping.
+          </td>
+          <td>₹40,000 - ₹4 Lakh+</td>
+          <td>2 - 8 Weeks</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="cta-section">
+      <div class="cta-content">
+        <div>
+          <h2>Ready to get started?</h2>
+          <p style="font-size: x-large">Join Us Now</p>
+        </div>
+        <div>
+          <a href="/signup" class="cta-button">Sign Up for Free Section</a>
+          <form method="get">
+            <label for="service">Select your service</label>
+            <p><input type="text" id="service" name="service" /></p>
+            <label for="period">Select your service Time period</label>
+            <p><input type="text" id="period" name="period" /></p>
+          </form>
+        </div>
+      </div>
+    </section>
+        <script src="script.js"></script>
+  </body>
+</html>
