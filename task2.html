@@ -1,0 +1,48 @@
+<!-- Build a to-do list with ONE listener on the ul - not on individual items
+334. Use event.target.closest() to detect: checkbox click (mark complete), delete button (remove),
+item text click (make editable with contenteditable)
+335. Add items dynamically and verify delegation handles them without new listeners
+336. Count total listeners on the page - show it stays at one regardless of list length -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <style>
+      .checked {
+        text-decoration: line-through;
+        color: #888888;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice</title>
+    <script src="task2.js" defer></script>
+  </head>
+  <body>
+    <!-- 
+    <ul id="ul">
+      <li>
+        <label for="task1" class="list1">Task1</label>
+        <input type="checkbox" id="task1" name="Task1" class="t1" />
+      </li>
+      <button class="dlt-btn">Delete</button>
+      <li>
+        <label for="task2">Task2</label>
+        <input type="checkbox" id="task2" name="Task2" class="t2" />
+      </li>
+      <li>
+        <label for="task3">Task3</label>
+        <input type="checkbox" id="task3" name="Task3" class="t3" />
+      </li>
+      <li>
+        <label for="task4">Task4</label>
+        <input type="checkbox" id="task4" name="Task4" class="t4" />
+      </li>
+    </ul> -->
+    <h1>TO-DO-LIST</h1>
+    <div class="input">
+        <input type="text" id="input-box" placeholder="Add your task">
+        <button onclick="addTask()">Add</button>
+    </div>
+    <div id="list-container"></div>
+  </body>
+</html>
