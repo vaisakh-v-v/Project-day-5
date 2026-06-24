@@ -1,0 +1,149 @@
+<!-- Replace the CSS-only hamburger from Week 2 with JS on all five pages
+326. Clicking the hamburger: adds class=open to the drawer, sets aria-expanded='true', prevents
+body scroll with overflow: hidden
+327. Clicking the overlay or pressing Escape closes the drawer and reverses all state
+328. Implement a focus trap: Tab must cycle through drawer links only -->
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Home Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width intial-scaling=1.0" />
+    <meta name="description" content="This is a home page" />
+    <meta property="og:title" content="Your Catchy Page Title" />
+    <meta
+      property="og:description"
+      content="To assist with generating dynamic Open Graph (OG) images, you can use the Vercel @vercel/og library to compute and generate social card images using Vercel Functions."
+    />
+    <style>
+      :root {
+        --bg-color: #ffffff;
+        --text-color: #333333;
+      }
+      body {
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+      }
+
+      header {
+        background-color: var(--bg-secondary);
+        border-bottom: 1px solid var(--border-color);
+      }
+      body.dark-mode {
+        --bg-color: #1a1a1a;
+        --text-color: #ffffff;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease;
+      }
+      .nav-list {
+        display: none;
+      }
+
+       .show {
+        display: block;
+      }
+      #menu-button {
+        background: none;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+      }
+
+ 
+    </style>
+  </head>
+  <body>
+    <header>
+     
+      <nav class="menu" id="nav-menu" aria-label="main navigation">
+        <button style="color: green;" id="menu-button" aria-label="Toggle navigation">&#9776;</button>
+        <ul class="nav-list">
+          <li><a href="index.html" aria-current="page">Home-page</a></li>
+          <li><a href="service.html">Service</a></li>
+          <li><a href="teams.html">Teams</a></li>
+          <li><button id="toggle-btn">Switch to Dark Mode</button></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero">
+        <h1>Open Graph (OG) Image Generation</h1>
+      </div>
+
+      <div class="row">
+        <h2>features</h2>
+        <div class="column">
+          <h3>Benefits</h3>
+          <p>
+            Performance: With a small amount of code needed to generate images,
+            functions can be started almost instantly. This allows the image
+            generation process to be fast and recognized by tools like the Open
+            Graph Debugger
+          </p>
+        </div>
+        <div class="column">
+          <h3>Supported features</h3>
+          <p>
+            Basic CSS layouts including flexbox and absolute positioning Custom
+            fonts, text wrapping, centering, and nested images Ability to
+            download the subset characters of the font from Google Fonts
+            Compatible with any framework and application deployed on Vercel
+            View your OG image and other metadata before your deployment goes to
+            production through the Open Graph tab
+          </p>
+        </div>
+        <div class="column">
+          <h3>Runtime support</h3>
+          <p>
+            There are limitations when using vercel/og with the Next.js Pages
+            Router and the Node.js runtime. Specifically, this combination does
+            not support the return new Response(…) syntax. The table below
+            provides a breakdown of the supported syntaxes for different
+            configurations.
+          </p>
+        </div>
+      </div>
+      <section>
+        <h3>blockquotes</h3>
+        <div>
+          <ul>
+            <li>
+              <blockquote
+                cite="https://help.testimonial.to/en/articles/9452021-group-meta-tag"
+              >
+                The "Quick & Punchy" Testimonial
+              </blockquote>
+            </li>
+            <li>
+              <blockquote
+                cite="https://help.testimonial.to/en/articles/9452021-group-meta-tag"
+              >
+                The "Emotional Transformation" Testimonial
+              </blockquote>
+            </li>
+            <li>
+              <blockquote
+                cite="https://medium.com/geekculture/open-graph-tags-in-html-101-5d470bbdb78a"
+              >
+                The "Metric-Driven" Testimonial
+              </blockquote>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <footer><p>This is the home page</p></footer>
+    <label class="theme-toggle">
+      <input type="checkbox" id="theme-checkbox" />
+      Toggle Dark Mode
+    </label>
+    <script src="script.js"></script>
+  </body>
+</html>
