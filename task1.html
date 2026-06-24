@@ -1,0 +1,49 @@
+<!-- Three-level nested div. Add click listeners in both bubble and capture phases on all three
+levels. Log phase name and element.
+330. Demonstrate stopPropagation() - click the child, outer listeners should not fire
+331. Demonstrate stopImmediatePropagation() - two listeners on same element, stop second
+332. Show preventDefault() on a form submit and on an anchor click -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice</title>
+    <script src="tsak1.js" defer></script>
+  </head>
+  <body>
+    <h1>Bubbling</h1>
+    <div class="level1" id="gp">GP
+        <div class="level2" id="p">P
+            <div class="level3" id="c">C</div>
+        </div>
+    </div>
+
+    <h1>capturing</h1>
+     <div class="level1" id="gp2">GP
+        <div class="level2" id="p2">P
+            <div class="level3" id="c2">C</div>
+        </div>
+    </div>
+
+    <h2>StopPropogation</h2>
+    <div class="level1" id="gp3">GP
+        <div class="level2" id="p3">P
+            <div class="level3" id="c3">C</div>
+        </div>
+    </div>
+
+     <h2>StopImmediatePropogation</h2>
+    <div class="level1" id="gp4">GP
+        <div class="level2" id="p4">P
+            <div class="level3" id="c4">C</div>
+        </div>
+    </div>
+
+    <form id="form">
+  <input type="text">
+  <button type="submit">Submit</button>
+</form>
+
+  </body>
+</html>
