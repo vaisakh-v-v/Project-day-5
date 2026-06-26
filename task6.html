@@ -8,75 +8,44 @@ toggles
 <!doctype html>
 <html lang="en-US">
   <head>
+    <script src="task6.js" defer></script>
     <title>Teams Page</title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width intial-scaling=1.0" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0" />
     <style>
-      .toggle-input {
-        display: none;
-      }
-
-      .toggle-header {
-        display: block;
-        padding: 15px;
-        background-color: grey;
-        color: rgb(19, 15, 15);
+      .accordion {
+        background-color: #eee;
+        color: #444;
         cursor: pointer;
-        font-weight: bold;
-      }
-
-      .toggle-content {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.35s ease-in-out;
-        background-color: #f9f9f9;
-      }
-
-      .toggle-input:checked ~ .toggle-content {
-        max-height: 500px;
-      }
-      .tabs-container {
-        display: flex;
-        flex-wrap: wrap;
-        max-width: 600px;
-        margin: 20px;
-      }
-      .tabs-container input[type="radio"] {
-        display: none;
-      }
-
-      .tab-panel {
+        padding: 18px;
         width: 100%;
-        order: 1;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: 0.4s;
+      }
+      .accordion:focus{
+        background-color: burlywood;
+      }
+
+      .active,
+      .accordion:hover {
+        background-color: #ccc;
+      }
+
+      .panel {
+        padding: 0 18px;
         display: none;
-        padding: 20px;
-        background-color: #c5a6a6;
-        border: 1px solid #520909;
-        border-radius: 0 4px 4px 4px;
-        box-sizing: border-box;
+        background-color: white;
+        overflow: hidden;
       }
 
-      .tabs-container input[type="radio"]:checked + .tab-label {
-        background-color: #fff;
-        border-bottom: 1px solid #0a0a0a;
-        font-weight: bold;
-      }
-      .tabs-container input[type="radio"]:checked + .tab-label + .tab-panel {
-        display: block;
-      }
-
-      .tab-label {
-        padding: 10px 20px;
-        background-color: #7c4d4d;
-        border: 1px solid #ccc;
-        margin-right: 4px;
-        border-radius: 4px;
-      }
 
       .rating {
         margin-bottom: 20px;
         display: flex;
-        flex-direction: row-reverse; 
+        flex-direction: row-reverse;
         justify-content: flex-end;
       }
 
@@ -100,79 +69,73 @@ toggles
   </head>
 
   <body>
-    <div class="collapsible-wrapper">
-      <input type="checkbox" id="toggle-collapse" class="toggle-input" />
+    <h2>Accordion</h2>
 
-      <label for="toggle-collapse" class="toggle-header">Click to Expand</label>
-
-      <div class="toggle-content">
-        <div class="inner-content">
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since 1966, when designers at Letraset and James Mosley, the
-            librarian at St Bride Printing Library in London, took a 1914 Cicero
-            translation and scrambled it to make dummy text for Letraset's Body
-            Type sheets. It has survived not only many decades, but also the
-            leap into electronic typesetting, remaining essentially unchanged.
-            It was popularised thanks to these sheets and more recently with
-            desktop publishing software including versions of Lorem Ipsum.
-          </p>
-        </div>
-      </div>
+    <button class="accordion" aria-expanded="false">Section 1</button>
+    <div class="panel" id="rand">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+      </p>
     </div>
 
-    <div class="tabs-container">
-      <button type="radio" id="tab-1" name="tab-group"></button>
-      <label for="tab-1" class="tab-label">Tab One</label>
-      <div class="tab-panel">
-        <h3>Lorem Ipsum1</h3>
-        <p>
-          1Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since 1966, when designers at Letraset and James Mosley, the librarian
-          at St Bride Printing Library in London, took a 1914 Cicero translation
-          and scrambled it to make dummy text for Letraset's Body Type sheets.
-          It has survived not only many decades, but also the leap into
-          electronic typesetting, remaining essentially unchanged. It was
-          popularised thanks to these sheets and more recently with desktop
-          publishing software including versions of Lorem Ipsum.
-        </p>
-      </div>
+    <button class="accordion" aria-expanded="false">Section 2</button>
+    <div class="panel">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+        
+      </p>
+    </div>
 
-      <input type="radio" id="tab-2" name="tab-group" />
-      <label for="tab-2" class="tab-label">Tab Two</label>
-      <div class="tab-panel">
-        <h3>Lorem Ipsum2</h3>
-        <p>
-          2Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since 1966, when designers at Letraset and James Mosley, the librarian
-          at St Bride Printing Library in London, took a 1914 Cicero translation
-          and scrambled it to make dummy text for Letraset's Body Type sheets.
-          It has survived not only many decades, but also the leap into
-          electronic typesetting, remaining essentially unchanged. It was
-          popularised thanks to these sheets and more recently with desktop
-          publishing software including versions of Lorem Ipsum.
-        </p>
-      </div>
-
-      <input type="radio" id="tab-3" name="tab-group" />
-      <label for="tab-3" class="tab-label">Tab Three</label>
-      <div class="tab-panel">
-        <h3>Lorem Ipsum3</h3>
-        <p>
-          3Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since 1966, when designers at Letraset and James Mosley, the librarian
-          at St Bride Printing Library in London, took a 1914 Cicero translation
-          and scrambled it to make dummy text for Letraset's Body Type sheets.
-          It has survived not only many decades, but also the leap into
-          electronic typesetting, remaining essentially unchanged. It was
-          popularised thanks to these sheets and more recently with desktop
-          publishing software including versions of Lorem Ipsum.
-        </p>
-      </div>
+    <button class="accordion" aria-expanded="false">Section 3</button>
+    <div class="panel">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+      </p>
     </div>
 
     <form>
@@ -188,5 +151,6 @@ toggles
         <input type="radio" id="star1" name="rating" value="1" />
         <label for="star1">&#9733;</label>
       </div>
+    </form>
   </body>
 </html>
