@@ -1,0 +1,33 @@
+body {
+  background-color: #fff;
+  color: #000;
+  font-family: Georgia, serif;
+  font-size: 12pt;
+  margin: 0;
+}
+
+.navbar,
+.sidebar,
+.footer {
+  display: none !important;
+}
+
+.content {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+a::after {
+  content: " (" attr(href) ")";
+  font-size: 10pt;
+  color: #555;
+}
+
+
+
+h1,
+h2,
+h3 {
+  page-break-after: avoid;
+}
