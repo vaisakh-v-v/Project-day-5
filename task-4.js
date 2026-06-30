@@ -73,10 +73,10 @@ function zip(...arrays){
 }
 console.log(zip(["s", "p", "i", "d", "e", "r", "m", "a", "n"], [3, 1, 0, 7, 2, 0, 2, 6]));
 const inventory = [
-  { name: "asparagus", type: "vegetables", quantity: 9 },
-  { name: "bananas", type: "fruit", quantity: 5 },
-  { name: "goat", type: "meat", quantity: 23 },
-  { name: "cherries", type: "fruit", quantity: 12 },
+  { name: "carrot", type: "vegetables", quantity: 9 },
+  { name: "apple", type: "fruit", quantity: 5 },
+  { name: "chicken", type: "meat", quantity: 23 },
+  { name: "lichy", type: "fruit", quantity: 12 },
   { name: "fish", type: "meat", quantity: 22 },
 ];
 
