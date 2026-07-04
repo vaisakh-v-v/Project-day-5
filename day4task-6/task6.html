@@ -1,0 +1,91 @@
+<!-- Add to About page: enter a username, fetch from api.github.com/users/{username} and /repos
+413. Show avatar, name, bio, location, followers, following. Top 6 repos by stars with name,
+description, language badge, star count.
+414. Handle 404 (user not found) and 403/429 (rate limited) with specific friendly messages
+415. Cancel previous requests with AbortController when a new username is typed -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <script src="task6.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Github Profile Viewer</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        .search-bar{
+            width: 100%;
+            display:flex;
+            gap: 5px;
+            justify-content: center;
+        }
+        #search{
+            width: 500px;
+            height: 60px;
+        }
+        .parentcontainer{
+            display: grid;
+            grid-template-columns: auto 1fr;
+            margin: 40px;
+            column-gap: 30px;
+        }
+        .profile{
+            display:flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .text{
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .repo{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+         .repoCard {
+        display: flex;
+        flex-direction: column;
+        height: 200px;
+        padding: 16px;
+        border: solid black;
+        gap: 5px;
+      }
+      .bottom {
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+      }
+
+    </style>
+    </head>
+    <body>
+        <main>
+            <h1>Github Profile viewer</h1>
+            <div class="search-bar">
+                <label for="search"></label>
+                <input type="search" id="search" placeholder="enter username">
+                <button>Search</button>
+            </div>
+            <div class="parentcontainer">
+                <div class="profile">
+                    <div class="avathar">
+                        <img>
+                    </div>
+                    <div class="text">
+                        <div class="name"></div>
+                        <div class="bio"></div>
+                        <div class="location"></div>
+                        <div class="follower"></div>
+                        <div class="following"></div>
+                    </div>
+                </div>
+                <div class="repo"></div>
+            </div>
+        </main>
+    </body>
