@@ -1,0 +1,89 @@
+<!-- Fetch from Open-Meteo for a default city. Show temperature, wind speed, weather code
+description.
+409. Show a loading skeleton while fetching and an inline error message on failure
+410. Cache in sessionStorage with a 10-minute TTL
+411. Add a city search input using Open-Meteo's geocoding API - update weather on city selection -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Climate Prediction</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="task5.js" defer></script>
+        <style>
+             :root {
+            color: #ffffff;
+            background-color: rgb(181, 216, 181);          /* Changes the global text color to white */
+        }
+            .container{
+                height: 100vh;
+                border: solid black;
+                display:flex;
+                justify-content:center;
+                align-items: center;
+
+            }
+            .weather-card{
+                height: 400px;
+                width: 500px;
+                display: flex;
+                justify-content:center;
+                align-items: center;
+                flex-direction: column;
+                background-color: #4e8fe4;
+
+            }
+            .weather{
+                height: 250px;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .search{
+                display: flex;
+                flex-direction: column;
+            }
+            .skelton {
+        background: linear-gradient(
+          -45deg,
+          #bebebe 40%,
+          #666666 50%,
+          #7a7a7a 60%
+        );
+        background-size: 300%;
+        background-position-x: 100%;
+        animation: skelton 1s infinite linear;
+        animation-direction: alternate;
+      }
+      @keyframes skelton {
+        to {
+          background-position-x: 0;
+        }
+    }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="weather-card">
+            <div class="search">
+                <h2>Weather Forecast</h2>
+                <input type="text" id="city-input" placeholder="Enter city">
+                <button id="city-input-btn">Search</button>
+            </div>
+            <div class="weather">
+                    <img style="height: 150px; width:150px;" src="weather-color-moon-cloud-light-svgrepo-com.svg" alt="weather-icon">
+                <span>Temperature in Degree Celcious:<span id="temperature"></span></span>
+                <span>Wind Speed in kl/h:<span id="wind-speed"></span></span>
+                <span>
+                    weather description:
+                    <span id="weatherDescription"></span>
+                </span>
+            </div>
+                
+            </div>
+        </div>
+    </body>
+</html>
