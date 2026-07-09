@@ -1,56 +1,76 @@
-const observerOptions = {
-  root: null,
-  rootMargin: "0px",
-  scrollMargin: "0px",
-  threshold: 1.0,
-};
+const API_URL = 'https://jsonplaceholder.typicode.com/users'; 
+let teamMembers = [];
 
-const observerCallback = (entries, observer) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("heading-visible");
-    } else {
-      entry.target.classList.remove("heading-visible");
+const teamGrid = document.getElementById('team-grid');
+const filterContainer = document.getElementById('filter-container');
+
+async function fetchTeam() {
+    try {
+        const response = await fetch(API_URL);
+        if (!response.ok) throw new Error('Network response was not ok');
+        
+        const data = await response.json();
+        
+        teamMembers = data.map((user, index) => ({
+            ...user,
+            department: ['Engineering', 'Marketing', 'Design'][index % 3] 
+        }));
+
+        initTeamPage();
+    } catch (error) {
+        teamGrid.innerHTML = `<p class="error">Error loading team members: ${error.message}</p>`;
     }
-  });
-};  
-const headingObserver = new IntersectionObserver(
-  observerCallback,
-  observerOptions,
-);
-const headings = document.querySelectorAll(
-  "h1, h2, h3, p",
-);
-
-headings.forEach((heading) => {
-  headingObserver.observe(heading);
-});
-
-
-function updateProgressBar(){
-    const {scroll, scrollHeight}=document.documentElement;
-    const scrollpercent = (window.scrollY/(document.body.offsetHeight - window.innerHeight)) * 100 + '%';
-    document.querySelector("#progress-bar").style.setProperty("width",scrollpercent);
 }
 
-document.addEventListener("scroll", updateProgressBar);
 
-
-
-
-let mybutton = document.getElementById("myBtn");
-
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
+function initTeamPage() {
+    renderFilters();
+    renderCards(teamMembers); 
+    setupFilterListeners();
 }
 
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
+function renderFilters() {
+    const departments = ['all', ...new Set(teamMembers.map(member => member.department))];
+    
+    filterContainer.innerHTML = departments.map(dept => `
+        <button class="filter-btn ${dept === 'all' ? 'active' : ''}" data-dept="${dept}">
+            ${dept.charAt(0).toUpperCase() + dept.slice(1)}
+        </button>
+    `).join('');
 }
+
+function renderCards(members) {
+    if (members.length === 0) {
+        teamGrid.innerHTML = '<p class="no-results">No team members found in this department.</p>';
+        return;
+    }
+
+    teamGrid.innerHTML = members.map(member => `
+        <div class="card" data-department="${member.department}">
+            <div class="avatar">${member.name.charAt(0)}</div>
+            <h3>${member.name}</h3>
+            <p class="role">${member.company?.bs || 'Team Member'}</p>
+            <span class="badge">${member.department}</span>
+            <p class="email">${member.email}</p>
+        </div>
+    `).join('');
+}
+
+function setupFilterListeners() {
+    filterContainer.addEventListener('click', (e) => {
+        if (!e.target.classList.contains('filter-btn')) return;
+
+        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        e.target.classList.add('active');
+
+        const selectedDept = e.target.getAttribute('data-dept');
+        if (selectedDept === 'all') {
+            renderCards(teamMembers);
+        } else {
+            const filtered = teamMembers.filter(member => member.department === selectedDept);
+            renderCards(filtered);
+        }
+    });
+}
+
+fetchTeam();

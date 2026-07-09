@@ -1,206 +1,362 @@
 <!doctype html>
-r<html lang="en-US">
+<html lang="en-US">
   <head>
-    <script src="js/lightbox.js" defer></script>
-    <title>Home Page</title>
+    <title>Teams Page</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width initial-scale=1.0" />
+    <meta name="description" content="This is a teams page" />
+    <script src="js/script.js" defer></script>
     <style>
-      .container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 10px;
-        height: 2000px;
-      }
-      .overlay {
-        display: none;
-        position: fixed;
-        z-index: 9999;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        backdrop-filter: blur(10px);
-        justify-content: center;
-        align-items: center;
-      }
-      .overlay-content {
-        max-width: 70vw;
-        max-height: 60vh;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-        border-radius: 4px;
-        object-fit: cover;
+      :root {
+        --bg-color: #ffffff;
+        --text-color: #333333;
       }
 
-      .close-btn {
-        position: absolute;
-        top: 20px;
-        right: 30px;
-        font-size: 40px;
-        color: #6e0909;
-        font-weight: bold;
+      body.dark-mode {
+        --bg-color: #1a1a1a;
+        --text-color: #ffffff;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease;
+      }
+      .container1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 30px;
+        padding: 30px;
+      }
+
+      .container2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 30px;
+        padding: 30px;
+      }
+
+      figure {
+        display: table;
+        margin: 0 auto;
+      }
+      .member {
+        border: solid black;
+        width: 300px;
+        padding: 24px;
+        border-radius: 12px;
+        text-align: center;
+        background-color: aquamarine;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .member:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+      }
+      .member p {
+        opacity: 0;
+      }
+
+      .member:hover p {
+        opacity: 1;
+      }
+      figcaption {
+        text-align: center;
+      }
+
+      .nav-list {
+        display: flex;
+        flex-direction: row;
+        margin: 30px;
+        background-color: rgb(129, 107, 116);
+      }
+      .nav-list li {
+        list-style: none;
+        padding: 20px;
+        margin-left: 40px;
+      }
+      .nav-list {
+        display: none;
+      }
+
+       .show {
+        display: block;
+      }
+      #menu-button {
+        background: none;
+        border: none;
+        font-size: 2rem;
         cursor: pointer;
+      }
+
+
+      @media (max-width: 768px) {
+        .container1 {
+          grid-template-columns: 1fr 1fr;
+        }
+        .container2 {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .container1 {
+          grid-template-columns: 1fr;
+        }
+        .container2 {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
   <body>
-    <header>
-      <h1>Image gallary</h1>
+    <main>
+      <header>
+      <nav class="menu" id="nav-menu" aria-label="main navigation">
+       
+        <ul class="nav-list">
+          <li><a href="index.html" >Home-page</a></li>
+          <li><a href="service.html" aria-current="page">Service</a></li>
+          <li><a href="teams.html" aria-current="page">Teams</a></li>
+          <li><button id="toggle-btn">Switch to Dark Mode</button></li>
+        </ul>
+      </nav>
     </header>
 
-    <main>
-      <div class="container">
-        <img
-          style="
-            height: 100%;
-            width: 100%;
-            border: solid black;
-            border-radius: 3px;
-            object-fit: cover;
-          "
-          src="https://picsum.photos/200/300"
-          alt="random"
-          class="gallary-img"
-        />
-        <img
-          style="
-            height: 100%;
-            width: 100%;
-            border: solid black;
-            border-radius: 3px;
-            object-fit: cover;
-          "
-          src="https://picsum.photos/200/301"
-          alt="random"
-          class="gallary-img"
-        />
-        <img
-          style="
-            height: 100%;
-            width: 100%;
-            border: solid black;
-            border-radius: 3px;
-            object-fit: cover;
-          "
-          src="https://picsum.photos/200/302"
-          alt="random"
-          class="gallary-img"
-        />
-        <img
-          style="
-            height: 100%;
-            width: 100%;
-            border: solid black;
-            border-radius: 3px;
-            object-fit: cover;
-          "
-          src="https://picsum.photos/200/303"
-          alt="random"
-          class="gallary-img"
-        />
-        <img
-          style="
-            height: 100%;
-            width: 100%;
-            border: solid black;
-            border-radius: 3px;
-            object-fit: cover;
-          "
-          src="https://picsum.photos/200/304"
-          alt="random"
-          class="gallary-img"
-        />
-        <img
-          style="
-            height: 100%;
-            width: 100%;
-            border: solid black;
-            border-radius: 3px;
-            object-fit: cover;
-          "
-          src="https://picsum.photos/200/305"
-          alt="random"
-        />
-        <img
-          style="
-            height: 100%;
-            width: 100%;
-            border: solid black;
-            border-radius: 3px;
-            object-fit: cover;
-          "
-          src="https://picsum.photos/200/306"
-          alt="random"
-          class="gallary-img"
-        />
-        <img
-          style="
-            height: 100%;
-            width: 100%;
-            border: solid black;
-            border-radius: 3px;
-            object-fit: cover;
-          "
-          src="https://picsum.photos/200/307"
-          alt="random"
-          class="gallary-img"
-        />
-        <img
-          style="
-            height: 100%;
-            width: 100%;
-            border: solid black;
-            border-radius: 3px;
-            object-fit: cover;
-          "
-          src="https://picsum.photos/200/308"
-          alt="random"
-          class="gallary-img"
-        />
-        <img
-          style="
-            height: 100%;
-            width: 100%;
-            border: solid black;
-            border-radius: 3px;
-            object-fit: cover;
-          "
-          src="https://picsum.photos/200/309"
-          alt="random"
-          class="gallary-img"
-        />
-        <img
-          style="
-            height: 100%;
-            width: 100%;
-            border: solid black;
-            border-radius: 3px;
-            object-fit: cover;
-          "
-          src="https://picsum.photos/200/310"
-          alt="random"
-          class="gallary-img"
-        />
-        <img
-          style="
-            height: 100%;
-            width: 100%;
-            border: solid black;
-            border-radius: 3px;
-            object-fit: cover;
-          "
-          src="https://picsum.photos/200/311"
-          alt="random"
-          class="gallary-img"
-        />
-      </div>
+     <div id="filter-container">
+        <button class="filter-btn" data-dept="all">All</button>
+    </div>
 
-      <div id="image-overlay" class="overlay">
-        <span class="close-btn">close</span>
-        <span class="right ">right</span>
-        <img class="overlay-content" id="expanded-img" />
-        <span class="left-btn">left</span>
-      </div>
+    <div id="team-grid">
+      
+    </div>
+
+      <h1>Our Team</h1>
+      <section id="software">
+        <h2>Software developers</h2>
+        <hr />
+        <div class="container1">
+          <div class="member">
+            <figure>
+              <img
+                src="https://picsum.photos/250/250?random=1"
+                alt="CEO"
+                style="border-radius: 50%"
+              />
+              <figcaption>CEO</figcaption>
+            </figure>
+            <h3>Jon Doe</h3>
+            <p>
+              A professional who designs, builds, tests, and maintains computer
+              programs, mobile applications, and systems. They are
+              problem-solvers who translate user needs into executable code
+              using programming languages like Java, Python, or C++.
+            </p>
+          </div>
+
+          <div class="member">
+            <figure>
+              <img
+                src="https://picsum.photos/250/250?random=2"
+                alt="CEO"
+                style="border-radius: 50%"
+              />
+              <figcaption>Sinior Software Developer</figcaption>
+            </figure>
+            <h3>Doe</h3>
+            <p>
+              A professional who designs, builds, tests, and maintains computer
+              programs, mobile applications, and systems. They are
+              problem-solvers who translate user needs into executable code
+              using programming languages like Java, Python, or C++.
+            </p>
+          </div>
+
+          <div class="member">
+            <figure>
+              <img
+                src="https://picsum.photos/250/250?random=3"
+                alt="CEO"
+                style="border-radius: 50%"
+              />
+              <figcaption>CTO</figcaption>
+            </figure>
+            <h3>Sam</h3>
+            <p>
+              A professional who designs, builds, tests, and maintains computer
+              programs, mobile applications, and systems. They are
+              problem-solvers who translate user needs into executable code
+              using programming languages like Java, Python, or C++.
+            </p>
+          </div>
+
+          <div class="member">
+            <figure>
+              <img
+                src="https://picsum.photos/250/250?random=4"
+                alt="CEO"
+                style="border-radius: 50%"
+              />
+              <figcaption>Software Engineer</figcaption>
+            </figure>
+            <h3>Donbos</h3>
+            <p>
+              A professional who designs, builds, tests, and maintains computer
+              programs, mobile applications, and systems. They are
+              problem-solvers who translate user needs into executable code
+              using programming languages like Java, Python, or C++.
+            </p>
+          </div>
+
+          <div class="member">
+            <figure>
+              <img
+                src="https://picsum.photos/250/250?random=5"
+                alt="CEO"
+                style="border-radius: 50%"
+              />
+              <figcaption>Associate Software Developer</figcaption>
+            </figure>
+            <h3>Ria</h3>
+            <p>
+              A professional who designs, builds, tests, and maintains computer
+              programs, mobile applications, and systems. They are
+              problem-solvers who translate user needs into executable code
+              using programming languages like Java, Python, or C++.
+            </p>
+          </div>
+
+          <div class="member">
+            <figure>
+              <img
+                src="https://picsum.photos/250/250?random=6"
+                alt="CEO"
+                style="border-radius: 50%"
+              />
+              <figcaption>Software Tester</figcaption>
+            </figure>
+            <h3>Jon Doe</h3>
+            <p>
+              A professional who designs, builds, tests, and maintains computer
+              programs, mobile applications, and systems. They are
+              problem-solvers who translate user needs into executable code
+              using programming languages like Java, Python, or C++.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="management">
+        <h2>Management</h2>
+        <hr />
+        <div class="container2">
+          <div class="member">
+            <figure>
+              <img
+                src="https://picsum.photos/250/250?random=7"
+                alt="CEO"
+                style="border-radius: 50%"
+              />
+              <figcaption>Sinior Manager</figcaption>
+            </figure>
+            <h3>Jon Doe</h3>
+            <p>
+              Inspires and directs staff, sets long-term goals, and aligns
+              individual career needs with organizational objectives.
+            </p>
+          </div>
+
+          <div class="member">
+            <figure>
+              <img
+                src="https://picsum.photos/250/250?random=8"
+                alt="CEO"
+                style="border-radius: 50%"
+              />
+              <figcaption>Team Manager</figcaption>
+            </figure>
+            <h3>Jon Doe</h3>
+            <p>
+              Inspires and directs staff, sets long-term goals, and aligns
+              individual career needs with organizational objectives.
+            </p>
+          </div>
+
+          <div class="member">
+            <figure>
+              <img
+                src="https://picsum.photos/250/250?random=9"
+                alt="CEO"
+                style="border-radius: 50%"
+              />
+              <figcaption>Asistant Manager</figcaption>
+            </figure>
+            <h3>Jon Doe</h3>
+            <p>
+              Inspires and directs staff, sets long-term goals, and aligns
+              individual career needs with organizational objectives.
+            </p>
+          </div>
+
+          <div class="member">
+            <figure>
+              <img
+                src="https://picsum.photos/250/250?random=8"
+                alt="CEO"
+                style="border-radius: 50%"
+              />
+              <figcaption>Team Manager</figcaption>
+            </figure>
+            <h3>Jon Doe</h3>
+            <p>
+              Inspires and directs staff, sets long-term goals, and aligns
+              individual career needs with organizational objectives.
+            </p>
+          </div>
+
+          <div class="member">
+            <figure>
+              <img
+                src="https://picsum.photos/250/250?random=8"
+                alt="CEO"
+                style="border-radius: 50%"
+              />
+              <figcaption>Team Manager</figcaption>
+            </figure>
+            <h3>Jon Doe</h3>
+            <p>
+              Inspires and directs staff, sets long-term goals, and aligns
+              individual career needs with organizational objectives.
+            </p>
+          </div>
+
+          <div class="member">
+            <figure>
+              <img
+                src="https://picsum.photos/250/250?random=8"
+                alt="CEO"
+                style="border-radius: 50%"
+              />
+              <figcaption>Team Manager</figcaption>
+            </figure>
+            <h3>Jon Doe</h3>
+            <p>
+              Inspires and directs staff, sets long-term goals, and aligns
+              individual career needs with organizational objectives.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <footer>
+      <p>This is the Team page</p>
+    </footer>
   </body>
 </html>
