@@ -66,20 +66,20 @@ openBtn.addEventListener("click", openDrawer);
 closeBtn.addEventListener("click", closeDrawer);
 
 const recentPosts = document.querySelector(".recentpost");
-let postRecent = []
+let postRecent = [];
 API_URL = "https://jsonplaceholder.typicode.com/posts";
-async function fetchPost(API_URL){
-  try{
+async function fetchPost(API_URL) {
+  try {
     const response = await fetch(API_URL);
-    if(!response.ok) throw new Error("Network response was not ok");
+    if (!response.ok) throw new Error("Network response was not ok");
     const data = await response.json();
     postRecent = data.map((post) => ({
-      ...post
+      ...post,
     }));
     console.log(postRecent);
-  }catch(error){
+  } catch (error) {
     recentPosts.innerHTML = `<p class = "error">Error loading team members: ${error.message}</p>`;
-  }  
+  }
 }
 
 fetchPost(API_URL);

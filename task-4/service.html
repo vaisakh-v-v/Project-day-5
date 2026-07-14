@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-US">
   <head>
     <script src="js/task5.js" defer></script>
@@ -12,9 +12,9 @@
       content="To assist with generating dynamic Open Graph (OG) images, you can use the Vercel @vercel/og library to compute and generate social card images using Vercel Functions."
     />
     <style>
-      mark.highlight{
-        background-color:yellow ;
-        border-radius:2px;
+      mark.highlight {
+        background-color: yellow;
+        border-radius: 2px;
       }
       table {
         border-collapse: collapse;
@@ -104,26 +104,27 @@
         </ul>
       </nav>
 
-
-
-       <h1>Our Services</h1>
-    <div class="controls">
-        <input type="text" id="search-input" placeholder="Search for services...">
+      <h1>Our Services</h1>
+      <div class="controls">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search for services..."
+        />
         <select id="category-filter">
-            <option value="all">All Categories</option>
-            <option value="development">Development</option>
-            <option value="design">Design</option>
-            <option value="marketing">Marketing</option>
-            <option value="consulting">Consulting</option>
+          <option value="all">All Categories</option>
+          <option value="development">Development</option>
+          <option value="design">Design</option>
+          <option value="marketing">Marketing</option>
+          <option value="consulting">Consulting</option>
         </select>
-    </div>
+      </div>
 
-    <div id="services-grid">
-        <div id="no-results" class="no-results">No services found matching your criteria.</div>
-    </div>
-
-
-
+      <div id="services-grid">
+        <div id="no-results" class="no-results">
+          No services found matching your criteria.
+        </div>
+      </div>
     </div>
     <h1 style="font-weight: 800; font-size: 100px">services</h1>
     <div class="search-container">
