@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi-Article blog Page</title>
+    <style>
+      .chart {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        resize: both;
+        overflow: auto;
+        border: solid black;
+      }
+      .barGraph {
+        background-color: blue;
+        height: 250px;
+        width: 40px;
+        margin-top: 2em;
+        min-width: 4px;
+      }
+      .navbar {
+        background-color: rgb(8, 216, 78);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .heading {
+        text-align: center;
+      }
+      .parent {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+      }
+      .parent .sidebar {
+        min-width: 300px;
+        position: sticky;
+        top: 5em;
+      }
+      .card {
+        display: flex;
+        flex-direction: column;
+        border: solid;
+        gap: 20px;
+        margin: 20px;
+        padding: 10px;
+        width: 60vw;
+      }
+      .card:hover {
+        box-shadow: 10px 10x 10px black;
+        transition-property: opacity;
+        transition-duration: 2s;
+        transition-timing-function: ease;
+        transform: translateY(-30px);
+        transform: translateX(-10px);
+      }
+      .mainContent img {
+        width: 400px;
+        height: 400px;
+      }
+      .mainContent h2,
+      .card h3 {
+        text-align: center;
+        background-color: darkgray;
+      }
+      .card footer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        background-color: rgb(200, 148, 79);
+      }
+      .bottom {
+        text-align: center;
+        border: dashed black;
+      }
+      .footer {
+        text-align: center;
+        background-color: rgba(42, 230, 0, 0.57);
+        margin: 10px;
+        padding: 10px;
+      }
+      @media screen and (width<=768px) {
+        .parent {
+          flex-direction: column;
+        }
+        .mainContent {
+          order: -1;
+        }
+        .mainContent img {
+          width: 150px;
+          height: 150px;
+        }
+      }
+      .comments {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 3px;
+      }
+      .addComments {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        gap: 3px;
+      }
+      .addComments input {
+        flex-grow: 1;
+      }
+      .addComments button {
+        width: 50px;
+        height: 30px;
+      }
+      .addComments label {
+        display: none;
+      }
+      .comments .comment {
+        border-left: solid black;
+        border-bottom: solid black;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .comment div {
+        display: flex;
+        gap: 4px;
+        justify-content: flex-end;
+      }
+      .hidden {
+        display: none !important;
+      }
+      .liked {
+        fill: black;
+      }
+      .animation {
+        animation: fadeIn 1s ease-in;
+      }
+      .overlay {
+        position: fixed;
+        padding: 4px;
+        top: 80px;
+        right: 10px;
+        width: 300px;
+        height: 300px;
+        overflow: auto;
+        white-space: pre-line;
+        border: solid black;
+      }
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar" id="home">
+      <img
+        src="https://picsum.photos/id/240/200/200"
+        alt="logo text"
+        height="50"
+        width="50"
+      />
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#blog">Blog</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="buttons">
+        <button>Login/signup</button>
+      </div>
+    </header>
+    <main>
+      <div class="heading">
+        <h1>Think Different</h1>
+      </div>
+      <div class="parent">
+        <aside class="sidebar">
+          <section>
+            <h3>Recent Posts</h3>
+            <a href="#mentalhealth">The only way to be confident</a>
+            <br />
+            <br />
+            <a href="#ai">Artificial intelligence in Journalism</a>
+            <br />
+            <br />
+            <a href="#tools">Tools</a>
+          </section>
+        </aside>
+        <article class="mainContent" id="blog">
+          <h2>Blogs</h2>
+          <article class="card" id="mentalhealth">
+            <header>
+              <h3>The only way to Be confident</h3>
+              <time datetime="2004-12-01">2004-12-01</time>
+            </header>
+            <img
+              src="https://picsum.photos/id/230/200/200"
+              alt="image of an confident man"
+              height="500"
+              width="500"
+            />
+            <section>
+              <h4>Life of pi</h4>
+              <p>
+                I suppose in the end all of life becomes an act of letting go
+                but what always hurts the most is not taking a moment to say
+                goodbye
+              </p>
+              <p></p>
+              <p>
+                the slow drift of time which is taking us towards our inavitable
+                death is what scares me the most. but why is death somethig that
+                everyone should be affraid of. is life only an act of fearing
+                death or does that have any purpose in it
+              </p>
+            </section>
+            <footer>
+              <span>Vaisakh V</span>
+              <br />
+              <a href="#mentalhealth">mental health</a>
+            </footer>
+            <div class="commentSection">
+              <h4>Comments</h4>
+              <div class="comments"></div>
+              <div class="addComments">
+                <label for="comment">Add comments:</label>
+                <input
+                  type="text"
+                  id="comment"
+                  placeholder="type comment here"
+                />
+                <button>post</button>
+              </div>
+            </div>
+          </article>
+          <article class="card" id="ai">
+            <header>
+              <h3>artificial intelligence in journalism</h3>
+              <time datetime="2005-12-01">2005-12-01</time>
+            </header>
+            <img
+              src="https://picsum.photos/id/237/200/200"
+              alt="image of Artificial intelligence in journalism"
+              height="500"
+              width="500"
+            />
+            <section>
+              <h4>
+                moth tho ekk phal hha babumashai agle 6 mahina mai jo lakom pal
+                me jeeuga uska kya hoga. agar moth ke dar se jeena chod diya to
+                moth ky hua. babumashai jindaghi badi honichaiya lambi nahi.
+              </h4>
+              <p>
+                what is to be a true warrior. is it the ability to kill all the
+                enimies or having no enimies. a true warrior don't need a sword
+              </p>
+            </section>
+            <footer>
+              <span>John Watson</span>
+              <br />
+              <a href="#ai">Artificial intelligence</a>
+            </footer>
+            <div class="commentSection">
+              <h4>Comments</h4>
+              <div class="comments"></div>
+              <div class="addComments">
+                <label for="comment">Add comments:</label>
+                <input
+                  type="text"
+                  id="comment"
+                  placeholder="type comment here"
+                />
+                <button>post</button>
+              </div>
+            </div>
+          </article>
+          <article class="card" id="tools">
+            <header>
+              <h3>slow tools</h3>
+              <time datetime="2006-08-03">2006-08-03</time>
+            </header>
+            <img
+              src="https://picsum.photos/200/300"
+              alt="some slow tools"
+              height="500"
+              width="500"
+            />
+            <section>
+              <h4>What are some slow tools?</h4>
+              <p>
+                There seem to be a lot of people who just assume that faster
+                means better. There's this thing that used to take me 1 hour.
+                Now, thanks to this magic tool, I can do it in 10 minutes.This
+                perspective can be problematic when you've not fully
+                internalized purpose of a process. for example,if I could write
+                an essay like this one in two minutes instead of an hour or two
+                ,it would in many cased be worse for me. Because I wouldn't
+                struggle through manual re-writes, through editing, through
+                deleting , through re-organizing. I would lose out on the
+                benefits of the process. Now you may be thinking:"What's so bad
+                about losing out on the process?Are you saying we should not
+                make anything more efficient? I do not see you going out to the
+                well to get your water."
+              </p>
+            </section>
+            <footer>
+              <span>Carter mark</span>
+              <br />
+              <a href="#tools">Tools</a>
+            </footer>
+            <div class="commentSection">
+              <h4>Comments</h4>
+              <div class="comments"></div>
+              <div class="addComments">
+                <label for="comment">Add comments:</label>
+                <input
+                  type="text"
+                  id="comment"
+                  placeholder="type comment here"
+                />
+                <button>post</button>
+              </div>
+            </div>
+          </article>
+        </article>
+      </div>
+      <div class="bottom">
+        <article id="about">
+          <h3>About</h3>
+          <p>
+            This is a webpage showing the most popular and recent blogs. You can
+            also upload your own blogs here.
+          </p>
+        </article>
+        <article id="contact">
+          <h3>contact</h3>
+          <a href="mailto:hwas.backer@vonnue.com">Email</a>
+          <a href="tel:+123456789">Phone</a>
+        </article>
+      </div>
+      <div class="overlay"></div>
+      <script src="observer.js"></script>
+    </main>
+
+    <h1>Resize observer example</h1>
+    <div class="chart">
+      <div class="barGraph"></div>
+      <div class="barGraph"></div>
+      <div class="barGraph"></div>
+      <div class="barGraph"></div>
+    </div>
+
+    <footer class="footer">copyright blog 2026</footer>
+  </body>
+</html>
