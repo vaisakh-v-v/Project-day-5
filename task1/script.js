@@ -86,7 +86,7 @@ request.onsuccess = (event) => {
   db = event.target.result;
   console.log("Database initialized successfully.");
 
-  addRecord({ id: "user_01", name: "Vaisakh", email: "Vai@example.com" });
+  addRecord({ id: "user_01", name: "Vaisakh", email: "alice@example.com" });
 };
 
 request.onerror = (event) => {
