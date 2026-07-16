@@ -1,0 +1,31 @@
+<!-- Draw a bar chart of 12-month sales data: labelled axes, gridlines, bars with a linear gradient​
+​Animate bars growing from zero height using requestAnimationFrame with ease-out​
+​Add mouse hover: detect which bar is under cursor, show tooltip with exact value​
+​Export chart as PNG using canvas.toDataURL() - trigger a file download -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bar chart</title>
+        <style>
+            main{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+        </head>
+        <body>
+            <main>
+                <div class="canvasContainer">
+                    <h1>canvas chart</h1>
+                    <canvas id="canvas"></canvas>
+                    <div class="toolTip"></div>
+                </div>
+                <button><a href="" download="chart.png">​Export Chart</a></button>
+            </main>
+            <script src="task8.js"></script>
+        </body>
