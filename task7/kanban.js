@@ -105,7 +105,6 @@ init().then(() => {
     deleteButton.textContent = "Delete";
     task.style.backgroundColor = "white";
     task.textContent = event.target.previousElementSibling.value;
-    task.style.backgroundColor = "white";
     task.setAttribute("draggable", true);
     task.appendChild(deleteButton);
     task.tabIndex = 0;
