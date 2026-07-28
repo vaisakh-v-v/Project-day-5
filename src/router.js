@@ -2,13 +2,31 @@ import home from "./routes/home.js";
 import Login from "./routes/login.js";
 import { store } from "./js/store.js";
 import { renderTask } from "../src/components/render.js";
+import App from "./routes/app.js";
+
+document.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const task = {
+    title: document.querySelector("#task-name").value,
+    assigned: document.querySelector("#Assignee").value,
+    due: document.querySelector("#Priority").value,
+    priority: document.querySelector("#difficulty").value,
+    complete: false,
+  };
+  store.dispatch({
+    type: "ADD_TASK",
+    payload: task,
+  });
+  console.log("Form is valid and submitted successfully");
+});
+const taskForm = document.getElementById("addto-list");
 
 document.addEventListener("click", (event) => {
   const button = event.target.closest("[data-action]");
   if (!button) return;
   if (button.dataset.action === "delete-task") {
     const id = button.closest("[data-id]").dataset.id;
-  
+
     store.dispatch({
       type: "DELETE_TASK",
       payload: id,
@@ -22,33 +40,33 @@ document.addEventListener("click", (event) => {
     const togle = document.querySelector(".center");
     togle.classList.toggle("visible");
   }
-  if (button.dataset.action === "create-task") {
-    const task = {
-      title: document.querySelector("#task-name").value,
-      assigned: document.querySelector("#Assignee").value,
-      due: document.querySelector("#Priority").value,
-      priority: document.querySelector("#difficulty").value,
-      complete: false,
-    };
-    store.dispatch({
-      type: "ADD_TASK",
-      payload: task,
-    });
-  }
+  // if (button.dataset.action === "create-task") {
+  //   const task = {
+  //     title: document.querySelector("#task-name").value,
+  //     assigned: document.querySelector("#Assignee").value,
+  //     due: document.querySelector("#Priority").value,
+  //     priority: document.querySelector("#difficulty").value,
+  //     complete: false,
+  //   };
+  //   store.dispatch({
+  //     type: "ADD_TASK",
+  //     payload: task,
+  //   });
+  // }
   if (button.dataset.action === "finished") {
     const id = button.closest("[data-id]").dataset.id;
-   
+
     store.dispatch({
-        type : "COMPLETE_TASK",
-        payload: id,
+      type: "COMPLETE_TASK",
+      payload: id,
     });
-    
   }
 });
 
 const routes = {
   "/": home,
   login: Login,
+  app: App,
   404: () => "<h1>404 Page Not Found </h1>",
 };
 
@@ -57,7 +75,7 @@ const app = document.getElementById("app");
 const render = (state) => {
   const viewFunction = routes[state.route.path] || routes["404"];
   app.innerHTML = viewFunction();
-  if (state.route.path === "/") {
+  if (state.route.path === "app") {
     renderTask();
   }
 };

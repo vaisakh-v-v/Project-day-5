@@ -1,7 +1,7 @@
 export default function inputCard(){
     return`
         <div class="center">
-    <form class="form">
+    <div class="form">
       <div class="new">
         <h2>New Task</h2>
         <button id="clsoe" data-action = "exit">
@@ -33,15 +33,15 @@ export default function inputCard(){
       </div>
       <p>All fields are required</p>
 
-      <div class="task-details">
+      <form class="task-details">
             <div class="top">
                 <div class="name">
-                    <p>TASK NAME</p>
-                    <input type="text" id="task-name" placeholder="eg.Create Login Page" required>
+                    <label for="task-name">TASK NAME</label>
+                    <input name="task-name" type="text" id="task-name" placeholder="eg.Create Login Page" required>
                 </div>
                 <div class="priority">
-                    <p>PRIORITY</p>
-                    <input type="text" list="opt" in id="difficulty" placeholder="eg.Create Login Page" required>
+                    <label for="difficulty">PRIORITY</label>
+                    <input name="difficulty" type="text" list="opt"  id="difficulty" placeholder="eg.Create Login Page" required>
                     <datalist id="opt">
                         <option value="Medium">Medium</option>
                         <option value="Hard">Hard</option>
@@ -52,21 +52,21 @@ export default function inputCard(){
 
             <div class="bottom">
                  <div class="name">
-                    <p>ASSIGNEE</p>
-                    <input type="text" id="Assignee" placeholder="eg.Create Login Page">
+                    <label for="Assignee">ASSIGNEE</label>
+                    <input name="Assignee" type="text" id="Assignee" placeholder="eg.Create Login Page" required>
                 </div>
                 <div class="priority">
-                    <p>DUE DATE</p>
-                    <input type="date" id="Priority" placeholder="eg.Create Login Page">
+                    <label for="Priority">DUE DATE</label>
+                    <input name="Priority" type="date" id="Priority" placeholder="eg.Create Login Page" required>
                 </div>
             </div>
 
             <div class="add">
-        <button id="addto-list" data-action = "create-task">Add Task +</button>
+        <button type="submit" id="addto-list" data-action = "create-task">Add Task +</button>
       </div>
 
-      </div>
-    </form>
+      </form>
+    </div>
     </div>
     `;
 }

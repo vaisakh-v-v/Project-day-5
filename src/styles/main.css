@@ -274,7 +274,7 @@ body {
   order: 0;
 }
 
-.name p {
+.name label {
   width: 88px;
   height: 14px;
 
@@ -327,7 +327,7 @@ body {
   order: 1;
 }
 
-.priority p {
+.priority label {
   width: 88px;
   height: 14px;
 
@@ -396,7 +396,7 @@ body {
   order: 0;
 }
 
-.name p {
+.name label {
 
 
   width: 88px;
@@ -452,7 +452,7 @@ body {
   order: 1;
 }
 
-.priority p {
+.priority label {
   width: 88px;
   height: 14px;
 
@@ -759,9 +759,22 @@ flex-grow: 0;
   background: transparent;
   opacity: 0.7;
 }
+.not-complete{
+  background: white;
+}
+.not-crossed{
+  text-decoration: none;
+}
 
 .crossed-out{
   text-decoration: line-through;
   color: black;
   opacity: 0.7;
+}
+.home-page{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;l
+
 }

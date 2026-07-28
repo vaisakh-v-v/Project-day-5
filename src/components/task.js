@@ -3,9 +3,9 @@ export default function taskCard(task){
 
         return `
         <div class="hidden" >
-      <div class="problem ${task.complete? "complet" : ""}" data-id = "${task.id}">
+      <div class="problem ${task.complete? "complet" : "not-complete"}" data-id = "${task.id}">
         <div class="problem-stat">
-          <p class="${task.complete? "crossed-out" : ""}">${task.title}</p>
+          <p class="${task.complete? "crossed-out" : "not-crossed"}">${task.title}</p>
           <button>${task.priority}</button>
         </div>
 
