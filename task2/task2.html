@@ -1,0 +1,86 @@
+<!-- Add copy-to-clipboard to all code blocks using navigator.clipboard.writeText(). Show visual​
+​confirmation.​
+​481.​ ​Request permission for desktop notifications. Show one when a form is submitted successfully.​
+​482.​
+​Use navigator.geolocation.getCurrentPosition() to detect the city and pre-fill the contact form​
+​location field. Handle permission denied gracefully.​
+​483.​ ​Add a Share button using the Web Share API with a copy-URL fallback for unsupported​
+​browsers -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clipboard Notification and Geolocation</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+      form {
+        margin: 1em;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+      }
+      #submit {
+        border-radius: 30%;
+        width: 60px;
+        height: 40px;
+        margin: 10px;
+      }
+      .container1 {
+        height: 40vh;
+        display: flex;
+        align-items: last baseline;
+        justify-content: center;
+      }
+      .container2 {
+        height: 40vh;
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+      }
+      .field{
+        display: flex;
+        justify-content: center;
+      }
+      .submit{
+        display: flex;
+        justify-content: center;
+      }
+      .sharec{
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="container1">
+        <code>This is a clipboard </code><br>
+        <button class="copyCode"> copy</button>
+      </div>
+      <div class="containeir2">
+        <form>
+          <div class="field">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required />
+          </div>
+          <div class="field">
+            <label for="location">Location:</label>
+            <input type="text" id="location" required />
+          </div>
+          <div class="submit">
+          <input type="submit" id="submit" />
+          </div>
+        </form>
+      </div>
+      <div class="sharec">
+      <button class="share">Share</button>
+      </div>
+    </main>
+    <script src="task2.js"></script>
+  </body>
+</html>
