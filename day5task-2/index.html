@@ -1,0 +1,631 @@
+<html lang="en-US">
+  <head>
+    <title>Home Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width initial-scaling=1.0" />
+    <meta name="description" content="This is a home page" />
+    <meta property="og:title" content="Your Catchy Page Title" />
+    <meta
+      property="og:description"
+      content="To assist with generating dynamic Open Graph (OG) images, you can use the Vercel @vercel/og library to compute and generate social card images using Vercel Functions."
+    />
+    <style>
+      :root {
+        --bg-primary: #ffffff;
+        --bg-secondary: #f4f4f9;
+        --text-primary: #1a1a1a;
+        --text-secondary: #555555;
+        --accent-color: #0066cc;
+        --border-color: #cccccc;
+      }
+      h1,
+      h2,
+      h3 {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.6s ease-out,
+          transform 0.6s ease-out;
+      }
+
+      h1.heading-visible,
+      h2.heading-visible,
+      h3.heading-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      body {
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+      }
+
+      header {
+        background-color: var(--bg-secondary);
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      a {
+        color: var(--accent-color);
+      }
+
+      p {
+        color: var(--text-secondary);
+      }
+      html:has(#theme-checkbox:checked) {
+        --bg-primary: #121212;
+        --text-primary: #f0f0f0;
+      }
+
+      #progress-bar {
+        position: fixed;
+        top: 0;
+        z-index: 999;
+        --progress: 0;
+        height: 8px;
+        width: var(--progress);
+        background-color: #a50e0e;
+      }
+      #myBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+        font-size: 18px;
+        background-color: rgb(0, 0, 0);
+        border-radius: 50%;
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+      }
+    </style>
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <div id="progress-bar"></div>
+
+    <header>
+      <nav class="site-navigation" aria-label="main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" aria-current="page">Home-page</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Service</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero">
+        <h1>Open Graph (OG) Image Generation</h1>
+      </div>
+
+      <div class="row">
+        <h2>features</h2>
+        <div class="column">
+          <h3>Benefits</h3>
+          <p>
+            Performance: With a small amount of code needed to generate images,
+            functions can be started almost instantly. This allows the image
+            generation process to be fast and recognized by tools like the Open
+            Graph Debugger
+          </p>
+          <p>
+            Performance: With a small amount of code needed to generate images,
+            functions can be started almost instantly. This allows the image
+            generation process to be fast and recognized by tools like the Open
+            Graph Debugger
+          </p>
+          <p>
+            Performance: With a small amount of code needed to generate images,
+            functions can be started almost instantly. This allows the image
+            generation process to be fast and recognized by tools like the Open
+            Graph Debugger
+          </p>
+          <p>
+            Performance: With a small amount of code needed to generate images,
+            functions can be started almost instantly. This allows the image
+            generation process to be fast and recognized by tools like the Open
+            Graph Debugger
+          </p>
+          <p>
+            Performance: With a small amount of code needed to generate images,
+            functions can be started almost instantly. This allows the image
+            generation process to be fast and recognized by tools like the Open
+            Graph Debugger
+          </p>
+          <p>
+            Performance: With a small amount of code needed to generate images,
+            functions can be started almost instantly. This allows the image
+            generation process to be fast and recognized by tools like the Open
+            Graph Debugger
+          </p>
+          <p>
+            Performance: With a small amount of code needed to generate images,
+            functions can be started almost instantly. This allows the image
+            generation process to be fast and recognized by tools like the Open
+            Graph Debugger
+          </p>
+          <p>
+            Performance: With a small amount of code needed to generate images,
+            functions can be started almost instantly. This allows the image
+            generation process to be fast and recognized by tools like the Open
+            Graph Debugger
+          </p>
+          <p>
+            Performance: With a small amount of code needed to generate images,
+            functions can be started almost instantly. This allows the image
+            generation process to be fast and recognized by tools like the Open
+            Graph Debugger
+          </p>
+          <p>
+            Performance: With a small amount of code needed to generate images,
+            functions can be started almost instantly. This allows the image
+            generation process to be fast and recognized by tools like the Open
+            Graph Debugger
+          </p>
+          <p>
+            Performance: With a small amount of code needed to generate images,
+            functions can be started almost instantly. This allows the image
+            generation process to be fast and recognized by tools like the Open
+            Graph Debugger
+          </p>
+          <p>
+            Performance: With a small amount of code needed to generate images,
+            functions can be started almost instantly. This allows the image
+            generation process to be fast and recognized by tools like the Open
+            Graph Debugger
+          </p>
+          <p>
+            Performance: With a small amount of code needed to generate images,
+            functions can be started almost instantly. This allows the image
+            generation process to be fast and recognized by tools like the Open
+            Graph Debugger
+          </p>
+          <p>
+            Performance: With a small amount of code needed to generate images,
+            functions can be started almost instantly. This allows the image
+            generation process to be fast and recognized by tools like the Open
+            Graph Debugger
+          </p>
+          <p>
+            Performance: With a small amount of code needed to generate images,
+            functions can be started almost instantly. This allows the image
+            generation process to be fast and recognized by tools like the Open
+            Graph Debugger
+          </p>
+          <p>
+            Performance: With a small amount of code needed to generate images,
+            functions can be started almost instantly. This allows the image
+            generation process to be fast and recognized by tools like the Open
+            Graph Debugger
+          </p>
+          <p>
+            Performance: With a small amount of code needed to generate images,
+            functions can be started almost instantly. This allows the image
+            generation process to be fast and recognized by tools like the Open
+            Graph Debugger
+          </p>
+          <p>
+            Performance: With a small amount of code needed to generate images,
+            functions can be started almost instantly. This allows the image
+            generation process to be fast and recognized by tools like the Open
+            Graph Debugger
+          </p>
+          <p>
+            Performance: With a small amount of code needed to generate images,
+            functions can be started almost instantly. This allows the image
+            generation process to be fast and recognized by tools like the Open
+            Graph Debugger
+          </p>
+          <p>
+            Performance: With a small amount of code needed to generate images,
+            functions can be started almost instantly. This allows the image
+            generation process to be fast and recognized by tools like the Open
+            Graph Debugger
+          </p>
+        </div>
+        <div class="column">
+          <h3>Supported features</h3>
+          <p>
+            Basic CSS layouts including flexbox and absolute positioning Custom
+            fonts, text wrapping, centering, and nested images Ability to
+            download the subset characters of the font from Google Fonts
+            Compatible with any framework and application deployed on Vercel
+            View your OG image and other metadata before your deployment goes to
+            production through the Open Graph tab
+          </p>
+          <p>
+            Basic CSS layouts including flexbox and absolute positioning Custom
+            fonts, text wrapping, centering, and nested images Ability to
+            download the subset characters of the font from Google Fonts
+            Compatible with any framework and application deployed on Vercel
+            View your OG image and other metadata before your deployment goes to
+            production through the Open Graph tab
+          </p>
+          <p>
+            Basic CSS layouts including flexbox and absolute positioning Custom
+            fonts, text wrapping, centering, and nested images Ability to
+            download the subset characters of the font from Google Fonts
+            Compatible with any framework and application deployed on Vercel
+            View your OG image and other metadata before your deployment goes to
+            production through the Open Graph tab
+          </p>
+          <p>
+            Basic CSS layouts including flexbox and absolute positioning Custom
+            fonts, text wrapping, centering, and nested images Ability to
+            download the subset characters of the font from Google Fonts
+            Compatible with any framework and application deployed on Vercel
+            View your OG image and other metadata before your deployment goes to
+            production through the Open Graph tab
+          </p>
+          <p>
+            Basic CSS layouts including flexbox and absolute positioning Custom
+            fonts, text wrapping, centering, and nested images Ability to
+            download the subset characters of the font from Google Fonts
+            Compatible with any framework and application deployed on Vercel
+            View your OG image and other metadata before your deployment goes to
+            production through the Open Graph tab
+          </p>
+          <p>
+            Basic CSS layouts including flexbox and absolute positioning Custom
+            fonts, text wrapping, centering, and nested images Ability to
+            download the subset characters of the font from Google Fonts
+            Compatible with any framework and application deployed on Vercel
+            View your OG image and other metadata before your deployment goes to
+            production through the Open Graph tab
+          </p>
+          <p>
+            Basic CSS layouts including flexbox and absolute positioning Custom
+            fonts, text wrapping, centering, and nested images Ability to
+            download the subset characters of the font from Google Fonts
+            Compatible with any framework and application deployed on Vercel
+            View your OG image and other metadata before your deployment goes to
+            production through the Open Graph tab
+          </p>
+          <p>
+            Basic CSS layouts including flexbox and absolute positioning Custom
+            fonts, text wrapping, centering, and nested images Ability to
+            download the subset characters of the font from Google Fonts
+            Compatible with any framework and application deployed on Vercel
+            View your OG image and other metadata before your deployment goes to
+            production through the Open Graph tab
+          </p>
+          <p>
+            Basic CSS layouts including flexbox and absolute positioning Custom
+            fonts, text wrapping, centering, and nested images Ability to
+            download the subset characters of the font from Google Fonts
+            Compatible with any framework and application deployed on Vercel
+            View your OG image and other metadata before your deployment goes to
+            production through the Open Graph tab
+          </p>
+          <p>
+            Basic CSS layouts including flexbox and absolute positioning Custom
+            fonts, text wrapping, centering, and nested images Ability to
+            download the subset characters of the font from Google Fonts
+            Compatible with any framework and application deployed on Vercel
+            View your OG image and other metadata before your deployment goes to
+            production through the Open Graph tab
+          </p>
+          <p>
+            Basic CSS layouts including flexbox and absolute positioning Custom
+            fonts, text wrapping, centering, and nested images Ability to
+            download the subset characters of the font from Google Fonts
+            Compatible with any framework and application deployed on Vercel
+            View your OG image and other metadata before your deployment goes to
+            production through the Open Graph tab
+          </p>
+          <p>
+            Basic CSS layouts including flexbox and absolute positioning Custom
+            fonts, text wrapping, centering, and nested images Ability to
+            download the subset characters of the font from Google Fonts
+            Compatible with any framework and application deployed on Vercel
+            View your OG image and other metadata before your deployment goes to
+            production through the Open Graph tab
+          </p>
+          <p>
+            Basic CSS layouts including flexbox and absolute positioning Custom
+            fonts, text wrapping, centering, and nested images Ability to
+            download the subset characters of the font from Google Fonts
+            Compatible with any framework and application deployed on Vercel
+            View your OG image and other metadata before your deployment goes to
+            production through the Open Graph tab
+          </p>
+          <p>
+            Basic CSS layouts including flexbox and absolute positioning Custom
+            fonts, text wrapping, centering, and nested images Ability to
+            download the subset characters of the font from Google Fonts
+            Compatible with any framework and application deployed on Vercel
+            View your OG image and other metadata before your deployment goes to
+            production through the Open Graph tab
+          </p>
+          <p>
+            Basic CSS layouts including flexbox and absolute positioning Custom
+            fonts, text wrapping, centering, and nested images Ability to
+            download the subset characters of the font from Google Fonts
+            Compatible with any framework and application deployed on Vercel
+            View your OG image and other metadata before your deployment goes to
+            production through the Open Graph tab
+          </p>
+          <p>
+            Basic CSS layouts including flexbox and absolute positioning Custom
+            fonts, text wrapping, centering, and nested images Ability to
+            download the subset characters of the font from Google Fonts
+            Compatible with any framework and application deployed on Vercel
+            View your OG image and other metadata before your deployment goes to
+            production through the Open Graph tab
+          </p>
+          <p>
+            Basic CSS layouts including flexbox and absolute positioning Custom
+            fonts, text wrapping, centering, and nested images Ability to
+            download the subset characters of the font from Google Fonts
+            Compatible with any framework and application deployed on Vercel
+            View your OG image and other metadata before your deployment goes to
+            production through the Open Graph tab
+          </p>
+          <p>
+            Basic CSS layouts including flexbox and absolute positioning Custom
+            fonts, text wrapping, centering, and nested images Ability to
+            download the subset characters of the font from Google Fonts
+            Compatible with any framework and application deployed on Vercel
+            View your OG image and other metadata before your deployment goes to
+            production through the Open Graph tab
+          </p>
+          <p>
+            Basic CSS layouts including flexbox and absolute positioning Custom
+            fonts, text wrapping, centering, and nested images Ability to
+            download the subset characters of the font from Google Fonts
+            Compatible with any framework and application deployed on Vercel
+            View your OG image and other metadata before your deployment goes to
+            production through the Open Graph tab
+          </p>
+          <p>
+            Basic CSS layouts including flexbox and absolute positioning Custom
+            fonts, text wrapping, centering, and nested images Ability to
+            download the subset characters of the font from Google Fonts
+            Compatible with any framework and application deployed on Vercel
+            View your OG image and other metadata before your deployment goes to
+            production through the Open Graph tab
+          </p>
+        </div>
+        <div class="column">
+          <h3>Runtime support</h3>
+          <p>
+            There are limitations when using vercel/og with the Next.js Pages
+            Router and the Node.js runtime. Specifically, this combination does
+            not support the return new Response(…) syntax. The table below
+            provides a breakdown of the supported syntaxes for different
+            configurations.
+          </p>
+          <p>
+            There are limitations when using vercel/og with the Next.js Pages
+            Router and the Node.js runtime. Specifically, this combination does
+            not support the return new Response(…) syntax. The table below
+            provides a breakdown of the supported syntaxes for different
+            configurations.
+          </p>
+          <p>
+            There are limitations when using vercel/og with the Next.js Pages
+            Router and the Node.js runtime. Specifically, this combination does
+            not support the return new Response(…) syntax. The table below
+            provides a breakdown of the supported syntaxes for different
+            configurations.
+          </p>
+          <p>
+            There are limitations when using vercel/og with the Next.js Pages
+            Router and the Node.js runtime. Specifically, this combination does
+            not support the return new Response(…) syntax. The table below
+            provides a breakdown of the supported syntaxes for different
+            configurations.
+          </p>
+          <p>
+            There are limitations when using vercel/og with the Next.js Pages
+            Router and the Node.js runtime. Specifically, this combination does
+            not support the return new Response(…) syntax. The table below
+            provides a breakdown of the supported syntaxes for different
+            configurations.
+          </p>
+          <p>
+            There are limitations when using vercel/og with the Next.js Pages
+            Router and the Node.js runtime. Specifically, this combination does
+            not support the return new Response(…) syntax. The table below
+            provides a breakdown of the supported syntaxes for different
+            configurations.
+          </p>
+          <p>
+            There are limitations when using vercel/og with the Next.js Pages
+            Router and the Node.js runtime. Specifically, this combination does
+            not support the return new Response(…) syntax. The table below
+            provides a breakdown of the supported syntaxes for different
+            configurations.
+          </p>
+          <p>
+            There are limitations when using vercel/og with the Next.js Pages
+            Router and the Node.js runtime. Specifically, this combination does
+            not support the return new Response(…) syntax. The table below
+            provides a breakdown of the supported syntaxes for different
+            configurations.
+          </p>
+          <p>
+            There are limitations when using vercel/og with the Next.js Pages
+            Router and the Node.js runtime. Specifically, this combination does
+            not support the return new Response(…) syntax. The table below
+            provides a breakdown of the supported syntaxes for different
+            configurations.
+          </p>
+          <p>
+            There are limitations when using vercel/og with the Next.js Pages
+            Router and the Node.js runtime. Specifically, this combination does
+            not support the return new Response(…) syntax. The table below
+            provides a breakdown of the supported syntaxes for different
+            configurations.
+          </p>
+          <p>
+            There are limitations when using vercel/og with the Next.js Pages
+            Router and the Node.js runtime. Specifically, this combination does
+            not support the return new Response(…) syntax. The table below
+            provides a breakdown of the supported syntaxes for different
+            configurations.
+          </p>
+          <p>
+            There are limitations when using vercel/og with the Next.js Pages
+            Router and the Node.js runtime. Specifically, this combination does
+            not support the return new Response(…) syntax. The table below
+            provides a breakdown of the supported syntaxes for different
+            configurations.
+          </p>
+          <p>
+            There are limitations when using vercel/og with the Next.js Pages
+            Router and the Node.js runtime. Specifically, this combination does
+            not support the return new Response(…) syntax. The table below
+            provides a breakdown of the supported syntaxes for different
+            configurations.
+          </p>
+          <p>
+            There are limitations when using vercel/og with the Next.js Pages
+            Router and the Node.js runtime. Specifically, this combination does
+            not support the return new Response(…) syntax. The table below
+            provides a breakdown of the supported syntaxes for different
+            configurations.
+          </p>
+
+          <p>
+            There are limitations when using vercel/og with the Next.js Pages
+            Router and the Node.js runtime. Specifically, this combination does
+            not support the return new Response(…) syntax. The table below
+            provides a breakdown of the supported syntaxes for different
+            configurations.
+          </p>
+          <p>
+            There are limitations when using vercel/og with the Next.js Pages
+            Router and the Node.js runtime. Specifically, this combination does
+            not support the return new Response(…) syntax. The table below
+            provides a breakdown of the supported syntaxes for different
+            configurations.
+          </p>
+          <p>
+            There are limitations when using vercel/og with the Next.js Pages
+            Router and the Node.js runtime. Specifically, this combination does
+            not support the return new Response(…) syntax. The table below
+            provides a breakdown of the supported syntaxes for different
+            configurations.
+          </p>
+          <p>
+            There are limitations when using vercel/og with the Next.js Pages
+            Router and the Node.js runtime. Specifically, this combination does
+            not support the return new Response(…) syntax. The table below
+            provides a breakdown of the supported syntaxes for different
+            configurations.
+          </p>
+          <p>
+            There are limitations when using vercel/og with the Next.js Pages
+            Router and the Node.js runtime. Specifically, this combination does
+            not support the return new Response(…) syntax. The table below
+            provides a breakdown of the supported syntaxes for different
+            configurations.
+          </p>
+
+          <p>
+            There are limitations when using vercel/og with the Next.js Pages
+            Router and the Node.js runtime. Specifically, this combination does
+            not support the return new Response(…) syntax. The table below
+            provides a breakdown of the supported syntaxes for different
+            configurations.
+          </p>
+          <p>
+            There are limitations when using vercel/og with the Next.js Pages
+            Router and the Node.js runtime. Specifically, this combination does
+            not support the return new Response(…) syntax. The table below
+            provides a breakdown of the supported syntaxes for different
+            configurations.
+          </p>
+          <p>
+            There are limitations when using vercel/og with the Next.js Pages
+            Router and the Node.js runtime. Specifically, this combination does
+            not support the return new Response(…) syntax. The table below
+            provides a breakdown of the supported syntaxes for different
+            configurations.
+          </p>
+          <p>
+            There are limitations when using vercel/og with the Next.js Pages
+            Router and the Node.js runtime. Specifically, this combination does
+            not support the return new Response(…) syntax. The table below
+            provides a breakdown of the supported syntaxes for different
+            configurations.
+          </p>
+          <p>
+            There are limitations when using vercel/og with the Next.js Pages
+            Router and the Node.js runtime. Specifically, this combination does
+            not support the return new Response(…) syntax. The table below
+            provides a breakdown of the supported syntaxes for different
+            configurations.
+          </p>
+          <p>
+            There are limitations when using vercel/og with the Next.js Pages
+            Router and the Node.js runtime. Specifically, this combination does
+            not support the return new Response(…) syntax. The table below
+            provides a breakdown of the supported syntaxes for different
+            configurations.
+          </p>
+
+          <p>
+            There are limitations when using vercel/og with the Next.js Pages
+            Router and the Node.js runtime. Specifically, this combination does
+            not support the return new Response(…) syntax. The table below
+            provides a breakdown of the supported syntaxes for different
+            configurations.
+          </p>
+          <p>
+            There are limitations when using vercel/og with the Next.js Pages
+            Router and the Node.js runtime. Specifically, this combination does
+            not support the return new Response(…) syntax. The table below
+            provides a breakdown of the supported syntaxes for different
+            configurations.
+          </p>
+          <p>
+            There are limitations when using vercel/og with the Next.js Pages
+            Router and the Node.js runtime. Specifically, this combination does
+            not support the return new Response(…) syntax. The table below
+            provides a breakdown of the supported syntaxes for different
+            configurations.
+          </p>
+        </div>
+      </div>
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+      <section>
+        <h3>blockquotes</h3>
+        <div>
+          <ul>
+            <li>
+              <blockquote
+                cite="https://help.testimonial.to/en/articles/9452021-group-meta-tag"
+              >
+                The "Quick & Punchy" Testimonial
+              </blockquote>
+            </li>
+            <li>
+              <blockquote
+                cite="https://help.testimonial.to/en/articles/9452021-group-meta-tag"
+              >
+                The "Emotional Transformation" Testimonial
+              </blockquote>
+            </li>
+            <li>
+              <blockquote
+                cite="https://medium.com/geekculture/open-graph-tags-in-html-101-5d470bbdb78a"
+              >
+                The "Metric-Driven" Testimonial
+              </blockquote>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer><p>This is the home page</p></footer>
+    <label class="theme-toggle">
+      <input type="checkbox" id="theme-checkbox" />
+      Toggle Dark Mode
+    </label>
+  </body>
+</html>
