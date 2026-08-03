@@ -32,6 +32,6 @@ const config: Record<ConfigKey, string> = {
 
 const user: UserInput = {
     name: "Vaiskah",
-    avatar: "Spiderman no way home",
+    avatar: "Spiderman Brand-new-day",
 }
 
