@@ -14,7 +14,7 @@ function zip(...arrays){
     const maxLength = Math.max(
         ...arrays.map((a) =>{
             if(a === undefined) throw new Error("undefined array");
-            return a.length;
+            return a.length; 
         })
     );
     let zipArray = Array.from({ length: maxLength }, (_, i) => arrays.map((a) =>{
@@ -69,7 +69,7 @@ function curry(fn){
 };
 }
 
-function partial(fn, ...presetArgs){
+function partial(fn, ...presentArgs){
     return function partitioned(... args){
         if(args.length + presentArgs.length < fn.length)
             throw new Error("number of parameters exeedes");

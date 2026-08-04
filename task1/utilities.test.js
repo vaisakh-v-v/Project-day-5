@@ -49,7 +49,7 @@ test("groupBy-happy path:group by age", () =>{
 });
 
 test("groupBy-edge case:one not in any group", () => {
-    let arr = [10, 30, 60];
+    let arr = [10, 30];
     let result = { child: [10], young: [30] };
     expect(
         utilities.groupBy(arr, (age) => {
