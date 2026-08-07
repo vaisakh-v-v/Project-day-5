@@ -1,0 +1,28 @@
+{
+  "name": "project-day-5",
+  "version": "1.0.0",
+  "description": "day 5 project complete",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vaisakh-v-v/Project-day-5.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/vaisakh-v-v/Project-day-5/issues"
+  },
+  "homepage": "https://github.com/vaisakh-v-v/Project-day-5#readme",
+  "devDependencies": {
+    "jest": "^30.4.2"
+  }
+}
